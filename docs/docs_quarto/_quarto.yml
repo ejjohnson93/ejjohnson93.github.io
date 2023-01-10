@@ -1,0 +1,5 @@
+project:
+  type: website
+  
+metadata-files:
+  - _website.yml
