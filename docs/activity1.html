@@ -365,10 +365,9 @@ div.tocify {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/ejjohnson93/anderson-peffers_OA">
-    <span class="fab fa-github"></span>
+  <a href="https://twitter.com/LivUniCBF">
+    <span class="fab fa-twitter"></span>
      
-    Source code
   </a>
 </li>
       </ul>
@@ -386,12 +385,24 @@ div.tocify {
 
 
 <p><br></p>
-<div id="introduction-to-replit" class="section level1">
-<h1>Introduction to replit</h1>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>You can think of programming as a language that we use to talk to and
+be understood by computers. Like all languages you need to know the
+vocabulary and grammar. As you learn to program you develop problem
+solving skills. These problem solving skills are broadly applicable
+across all programming languages, so after learning one language you can
+learn a second much more easily.</p>
+<p>We have selected python for you to learn as it was designed to be
+easier for a human to read and write.</p>
+<p><br></p>
+</div>
+<div id="replit" class="section level1">
+<h1>replit</h1>
 <p>For these activities we will be using <code>replit</code>, a free
 online IDE. An IDE (integrated development environment) is an
-interactive way to test our code. Replit is just one of many, the link
-to it can be found here: <a href="https://replit.com/"
+interactive way to build, test and edit code. Replit is just one of
+many, the link to it can be found here: <a href="https://replit.com/"
 class="uri">https://replit.com/</a></p>
 <p>You first need to create an account.</p>
 <p>After this, Replit will ask you how familiar you are with
@@ -399,6 +410,7 @@ programming. For now, we’ll click ‘no I’ve got this’ as we can always
 return to these tutorials later.</p>
 <p>We first need to create a ‘repl’ for this project.</p>
 <p><img src="images/replit4.png" /></p>
+<p><br></p>
 <p>We will be prompted to choose a language and give the project a
 title. Choose ‘python’ for the language. You can name the repl whatever
 you like but here I suggest ‘CBF activity’. After you’re done click ‘+
@@ -408,7 +420,10 @@ Create Repl’ and we can begin our first coding activity.</p>
 </div>
 <div id="hello-world" class="section level1">
 <h1>Hello world!</h1>
-<p>We are now going to write our first program using Replit.</p>
+<p>A program is a precise set of instructions expressed in a programming
+language. The machine then translates this programming language into a
+form it can understand - machine code. We are now going to write our
+first python program using Replit.</p>
 <p>There will already be a python script open called ‘main.py’. We’ll
 start by writing our code in this. The output of this script will appear
 on the right in the ‘console’.</p>
@@ -424,8 +439,9 @@ something like this:</p>
 <p><img src="images/replit8.png" /></p>
 <p><br></p>
 <p>Our program used the command <code>print</code> to print out the text
-inside the quotation marks. We could store this text in something known
-as a variable and then print this variable out.</p>
+inside the quotation marks (this is equivalent to the <code>say</code>
+block in scratch). We could store this text in something known as a
+variable and then print this variable out.</p>
 <p>An example of this is below. Note the lines that begin with ‘#’,
 these are comments to remind us what our code does and aren’t read by
 the interpreter.</p>
@@ -436,10 +452,44 @@ hello = &quot;hello world!&quot;
 print(hello)</code></pre>
 <p>You can see that this code does the same thing:</p>
 <p><img src="images/replit9.png" /></p>
+<p><br></p>
+<p>Challenge: can you make the program print out something else?
+Anything you like.</p>
 <p><br> <br></p>
 </div>
 <div id="interactive-inputs" class="section level1">
 <h1>Interactive inputs</h1>
+<p>Normally, we don’t want our programs just to print out text. Some
+programs might expect user interaction. Next, we are going to write a
+program the prompts a user for an input, in this case your name. It
+stores the name in the variable ‘name’ and then prints the name out.</p>
+<pre class="python"><code># Use the &#39;input&#39; command to ask the user to provide an input and store it in variable &#39;name&#39;
+name = input(&quot;Enter name: &quot;)
+
+# Print the variable hello
+print(&quot;Hello, your name is&quot;, name)</code></pre>
+<p><br></p>
+<p>Let’s try and make this more complicated. We’ll write a program that
+imagines you’re having a conversation with a robot. It will first ask
+you for your name, then it will ask you to name it. The program will
+then print out your name and the name you gave it.</p>
+<pre class="python"><code># Use the &#39;input&#39; command to ask the user to provide an input and store it in variable &#39;name&#39;
+name1 = input(&quot;What is your name? : &quot;)
+name2 = input(&quot;What is my name? : &quot;)
+
+# Print the variable hello
+print(&quot;Hello, your name is &quot;, name1, &quot; and my name is &quot;, name2)</code></pre>
+<p><img src="images/replit10.png" /></p>
+<p><br></p>
+<p><img src="images/robot.png" /></p>
+<p><br></p>
+<p>Challenge: can you create a program that takes <b>three</b> inputs
+and then prints out a statement that includes all three inputs?</p>
+<p><br> <br></p>
+</div>
+<div id="conclusions" class="section level1">
+<h1>Conclusions</h1>
+<p>We have wrote our first python programs using replit - well done!</p>
 <p><img src="images/logo.png" style="float: right;"/></p>
 </div>
 

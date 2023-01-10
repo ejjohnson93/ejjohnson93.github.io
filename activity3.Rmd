@@ -7,11 +7,25 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<br>
+
+# Introduction
 
 
-```{python}
-print("hello world!")
+<br> 
+<br>
 
-```
+## Case study 1 - women in STEM
+
+
+<br>
+<br>
+
+## Case study 2 - global warming
+
+<br>
+<br>
+
+## Case study 3 - CFC release vs hole in ozone layer
 
 <img src="./images/logo.png" style="float: right;"/>

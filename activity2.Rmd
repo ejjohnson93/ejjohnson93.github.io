@@ -7,11 +7,48 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<br>
 
+# Introduction
 
-```{python}
-print("hello world!")
+Ada Lovelace, the first programmer, was the daughter of British poet Lord Byron.
+
+<br>
+
+<center>
+
+![](images/65e383024e4ae949f0c8c503b3a4622e.jpg){width="505"}
+
+</center>
+
+<br> <br>
+
+# Print a poem in python
+
+Let's write a python program that will print out each line of a poem. Here we will use <i>"Hope" is the thing with feathers</i> by Emily Dickinson.
+
+```{python, eval=FALSE}
+print("Hope is the thing with feathers—")
+print("That perches in the soul—")
+print("And sings the tune without the words—")
+print("And never stops—at all—")
 
 ```
+
+The output of this program will appear in the terminal like this:
+
+![](images/replit11.png)
+
+Do you have a favourite poem? Try and print the first stanza out using a python script.
+
+Don't worry if you can't think of any, you can explore a list of poems below:
+
+-   Poets.org
+
+-   PoetryFoundation.org
+
+-   ButtonPoetry.com
+
+-   FamousPoetsAndPoems.com
 
 <img src="./images/logo.png" style="float: right;"/>

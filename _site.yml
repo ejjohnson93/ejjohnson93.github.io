@@ -22,9 +22,8 @@ navbar:
   - text: About us
     href: about.html
   right:
-  - icon: fab fa-github
-    text: Source code
-    href: https://github.com/ejjohnson93/anderson-peffers_OA
+  - icon: fab fa-twitter
+    href: https://twitter.com/LivUniCBF
 output:
   html_document:
     toc: yes
