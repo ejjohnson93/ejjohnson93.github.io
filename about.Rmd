@@ -7,8 +7,22 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Our offices are situated in the Faculty of Health and Life Sciences at the University of Liverpool.
 
+![](images/uni_liverpool.png){width="122"}
 
-Text text text
+<br>
+
+You can find our website/learn more about us here: <https://www.liverpool.ac.uk/computational-biology-facility/>
+
+We can be contacted using the following email addresses:
+
+-   [cbf\@liverpool.ac.uk](mailto:cbf@liverpool.ac.uk) (general contact)
+
+-   Emily.Johnson\@liverpool.ac.uk (specific contact for this content)
+
+Or using the following phone number:
+
+-   +44 (0) 151 795 5473
 
 <img src="./images/logo.png" style="float: right;"/>

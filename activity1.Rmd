@@ -7,11 +7,69 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<br>
 
+# Introduction to replit
 
-```{python}
+For these activities we will be using `replit`, a free online IDE. An IDE (integrated development environment) is an interactive way to test our code. Replit is just one of many, the link to it can be found here: <https://replit.com/>
+
+You first need to create an account.
+
+After this, Replit will ask you how familiar you are with programming. For now, we'll click 'no I've got this' as we can always return to these tutorials later.
+
+We first need to create a 'repl' for this project.
+
+![](images/replit4.png)
+
+We will be prompted to choose a language and give the project a title. Choose 'python' for the language. You can name the repl whatever you like but here I suggest 'CBF activity'. After you're done click '+ Create Repl' and we can begin our first coding activity.
+
+![](images/replit6.png)
+
+<br> <br>
+
+# Hello world!
+
+We are now going to write our first program using Replit.
+
+There will already be a python script open called 'main.py'. We'll start by writing our code in this. The output of this script will appear on the right in the 'console'.
+
+![](images/replit_7.png)
+
+<br>
+
+To begin, we will start with what is known as a 'Hello World!' script. These are usually the starting point of learning any programming language. Copy and paste (or type) the following code into 'main.py':
+
+```{python, eval=FALSE}
 print("hello world!")
 
 ```
+
+Then click the green button that says 'run', your output should look something like this:
+
+![](images/replit8.png)
+
+<br>
+
+Our program used the command `print` to print out the text inside the quotation marks. We could store this text in something known as a variable and then print this variable out.
+
+An example of this is below. Note the lines that begin with '#', these are comments to remind us what our code does and aren't read by the interpreter.
+
+```{python, eval=FALSE}
+
+# Store our text inside a 'variable' called hello
+hello = "hello world!"
+
+# Print the variable hello
+print(hello)
+
+```
+
+You can see that this code does the same thing:
+
+![](images/replit9.png)
+
+<br> <br>
+
+# Interactive inputs
 
 <img src="./images/logo.png" style="float: right;"/>
