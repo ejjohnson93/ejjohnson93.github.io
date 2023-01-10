@@ -1,0 +1,17 @@
+---
+title: "Activity 1 - introduction to Python"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{python}
+print("hello world!")
+
+```
+
+<img src="./images/logo.png" style="float: right;"/>
