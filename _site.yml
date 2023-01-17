@@ -13,11 +13,17 @@ navbar:
       href: activity2.html
     - text: Activity 3 - data analaysis
       href: activity3.html
-  - text: Extra resources
+  - text: Extra activities
     menu:
-    - text: Extra activities
+    - text: Python game
       href: blank.html
-    - text: Additional learning
+    - text: Python drawing
+      href: blank.html
+  - text: Learning resources
+    menu:
+    - text: Set up python at home
+      href: blank.html
+    - text: Free teaching resources
       href: blank.html
   - text: About us
     href: about.html
@@ -30,3 +36,4 @@ output:
     toc_float: yes
     theme: flatly
     highlight: textmate
+    code_folding: show

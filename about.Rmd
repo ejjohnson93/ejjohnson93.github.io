@@ -1,5 +1,5 @@
 ---
-title: "About Us"
+title: "About us"
 output: html_document
 ---
 
@@ -7,7 +7,12 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Our offices are situated in the Faculty of Health and Life Sciences at the University of Liverpool.
+Our offices are situated in the Faculty of Health and Life Sciences at the University of Liverpool. 
+
+<br>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2378.407389253649!2d-2.963564694756717!3d53.40753997996218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sComputational%20Biology%20Facility%2C%20University%20of%20Liverpool%20MerseyBio%2C%20Crown%20Street%2C%20L69%207ZB!5e0!3m2!1sen!2suk!4v1673915169390!5m2!1sen!2suk" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
 
 ![](images/uni_liverpool.png){width="122"}
 

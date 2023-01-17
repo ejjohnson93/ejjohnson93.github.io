@@ -11,7 +11,7 @@
 
 
 
-<title>About Us</title>
+<title>About us</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -33,6 +33,7 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -224,6 +225,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -346,16 +350,31 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Extra resources
+    Extra activities
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="blank.html">Extra activities</a>
+      <a href="blank.html">Python game</a>
     </li>
     <li>
-      <a href="blank.html">Additional learning</a>
+      <a href="blank.html">Python drawing</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Learning resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="blank.html">Set up python at home</a>
+    </li>
+    <li>
+      <a href="blank.html">Free teaching resources</a>
     </li>
   </ul>
 </li>
@@ -365,10 +384,9 @@ div.tocify {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/ejjohnson93/anderson-peffers_OA">
-    <span class="fab fa-github"></span>
+  <a href="https://twitter.com/LivUniCBF">
+    <span class="fab fa-twitter"></span>
      
-    Source code
   </a>
 </li>
       </ul>
@@ -378,15 +396,26 @@ div.tocify {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
 
 
-<h1 class="title toc-ignore">About Us</h1>
+
+<h1 class="title toc-ignore">About us</h1>
 
 </div>
 
 
 <p>Our offices are situated in the Faculty of Health and Life Sciences
 at the University of Liverpool.</p>
+<p><br></p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2378.407389253649!2d-2.963564694756717!3d53.40753997996218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sComputational%20Biology%20Facility%2C%20University%20of%20Liverpool%20MerseyBio%2C%20Crown%20Street%2C%20L69%207ZB!5e0!3m2!1sen!2suk!4v1673915169390!5m2!1sen!2suk" width="400" height="300" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+</iframe>
 <p><img src="images/uni_liverpool.png" width="122" /></p>
 <p><br></p>
 <p>You can find our website/learn more about us here: <a
@@ -440,6 +469,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {

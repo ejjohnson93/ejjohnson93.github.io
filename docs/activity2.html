@@ -33,6 +33,7 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -224,6 +225,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -346,16 +350,31 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Extra resources
+    Extra activities
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="blank.html">Extra activities</a>
+      <a href="blank.html">Python game</a>
     </li>
     <li>
-      <a href="blank.html">Additional learning</a>
+      <a href="blank.html">Python drawing</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Learning resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="blank.html">Set up python at home</a>
+    </li>
+    <li>
+      <a href="blank.html">Free teaching resources</a>
     </li>
   </ul>
 </li>
@@ -377,6 +396,14 @@ div.tocify {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore">Activity 2 - Python poem</h1>
@@ -388,35 +415,153 @@ div.tocify {
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
 <p>Ada Lovelace, the first programmer, was the daughter of British poet
-Lord Byron.</p>
+Lord Byron. Lord Byron was a controversial figure and one of the
+earliest celebrities. He was famous for various love affairs and
+scandals. He married Annabella Milbanke, a wealthy heiress interested in
+maths and science. Byron jokingly referred to her as “the princess of
+parallelograms”. Their marriage only lasted a year.</p>
 <p><br></p>
 <center>
 <p><img src="images/65e383024e4ae949f0c8c503b3a4622e.jpg"
 width="505" /></p>
 </center>
+<p><br></p>
+<p>Growing up, Ava Lovelace received tutoring in mathematics. Her mother
+encouraged this, not just because she strongly believed in women’s
+education, but also to counter the dangerous poetic tendencies of her
+father. Her legacy is one that sees the beauty in . In this activity we
+bring programming together with poetry. The aim of this activity is to
+print and format a poem using python.</p>
 <p><br> <br></p>
 </div>
 <div id="print-a-poem-in-python" class="section level1">
 <h1>Print a poem in python</h1>
-<p>Let’s write a python program that will print out each line of a poem.
-Here we will use <i>“Hope” is the thing with feathers</i> by Emily
-Dickinson.</p>
+<p>Before beginning we might want to create a new repl in replit. This
+allows us to work on multiple different projects/activities at once. If
+you are already working in a different repl and want to return to your
+home page click the symbol in the top left corner, followed by
+‘home’:</p>
+<p><img src="images/replit15.png" /></p>
+<p><br></p>
+<p>We can then create a new repl as in activity 1, this time we might
+call it something like ‘CBF poem’:</p>
+<p><img src="images/replit14.png" /></p>
+<p><br></p>
+<p>Once our new repl is set up we can begin the activity. Let’s write a
+python program that will print out each line of a poem. Here we will use
+<i>“Hope” is the thing with feathers</i> by Emily Dickinson:</p>
+<p><br></p>
+<blockquote>
+<p>“Hope” is the thing with feathers -</p>
+<p>That perches in the soul -</p>
+<p>And sings the tune without the words -</p>
+<p>And never stops - at all -</p>
+<p><br></p>
+<p>And sweetest - in the Gale - is heard -</p>
+<p>And sore must be the storm -</p>
+<p>That could abash the little Bird</p>
+<p>That kept so many warm -</p>
+<p><br></p>
+<p>I’ve heard it in the chillest land -</p>
+<p>And on the strangest Sea -</p>
+<p>Yet - never - in Extremity,</p>
+<p>It asked a crumb - of me.</p>
+</blockquote>
+<p><br></p>
+<p>In our <a href="activity1.html">first activity</a> we learned about
+the <code>print</code> function. To print out the first stanza of this
+poem we could use the following program:</p>
 <pre class="python"><code>print(&quot;Hope is the thing with feathers—&quot;)
 print(&quot;That perches in the soul—&quot;)
 print(&quot;And sings the tune without the words—&quot;)
 print(&quot;And never stops—at all—&quot;)</code></pre>
+<p><br></p>
 <p>The output of this program will appear in the terminal like this:</p>
 <p><img src="images/replit11.png" /></p>
+<p><br></p>
 <p>Do you have a favourite poem? Try and print the first stanza out
 using a python script.</p>
 <p>Don’t worry if you can’t think of any, you can explore a list of
 poems below:</p>
 <ul>
-<li><p>Poets.org</p></li>
-<li><p>PoetryFoundation.org</p></li>
-<li><p>ButtonPoetry.com</p></li>
-<li><p>FamousPoetsAndPoems.com</p></li>
+<li><p><a
+href="https://poets.org/national-poetry-month">Poets.org</a></p></li>
+<li><p><a
+href="https://www.poetryfoundation.org/">PoetryFoundation.org</a></p></li>
+<li><p><a
+href="http://famouspoetsandpoems.com/">FamousPoetsAndPoems.com</a></p></li>
 </ul>
+<p>Or use PoetryFoundation’s <a
+href="https://www.poetryfoundation.org/poems/poem-of-the-day">poem of
+the day</a>.</p>
+<p><b>Challenge:</b> can you print more than one stanza? Can you leave a
+space between the stanzas?</p>
+<p><br></p>
+<p><b>Solution (click the ‘code’ button to the right to reveal the
+code)</b>:</p>
+<pre class="python fold-hide"><code># &#39;\n&#39; is a python sequence that means &#39;print a new line&#39; 
+
+print(&quot;Hope is the thing with feathers—&quot;)
+print(&quot;That perches in the soul—&quot;)
+print(&quot;And sings the tune without the words—&quot;)
+print(&quot;And never stops—at all—&quot;)
+print(&quot;\n&quot;)
+print(&quot;And sweetest - in the Gale - is heard -&quot;)
+print(&quot;And sore must be the storm -&quot;)
+print(&quot;That could abash the little Bird&quot;)
+print(&quot;That kept so many warm -&quot;)
+print(&quot;\n&quot;)</code></pre>
+<p><br> <br></p>
+</div>
+<div id="improve-it" class="section level1">
+<h1>Improve it</h1>
+<p>Our code currently prints all the lines of our poem at once. But
+maybe we want to give each line some time to ‘breath’. We can modify our
+program to add a delay between each line.</p>
+<p>There is a python package called ‘time’. Python packages contain
+additional commands to allow us to carry out certain tasks. ‘Time’
+contains a function called <code>sleep</code> that will allow us to add
+a pause between each line.</p>
+<p>An example usage of sleep is below:</p>
+<pre class="python"><code>import time 
+
+print(&quot;Let&#39;s watch the stars,&quot;)
+time.sleep(1) 
+print(&quot;fill the night with magic&quot;)
+time.sleep(1) 
+print(&quot; — Christy Ann Martine&quot;)</code></pre>
+<p>If we hover over the names of the functions replit will give us some
+information about that function.</p>
+<p><img src="images/replit13.png" /></p>
+<p><br></p>
+<p>If we used the sleep function on our earlier poem the program would
+be:</p>
+<pre class="python"><code>import time 
+
+print(&quot;Hope is the thing with feathers—&quot;)
+time.sleep(1.2) 
+print(&quot;That perches in the soul—&quot;)
+time.sleep(1.2) 
+print(&quot;And sings the tune without the words—&quot;)
+time.sleep(1.2) 
+print(&quot;And never stops—at all—&quot;)</code></pre>
+<p><img src="images/replit12.png" /></p>
+<p><b>Challenge:</b> now try and add a pause between each line of the
+poem you selected earlier.</p>
+<p><br> <br></p>
+</div>
+<div id="conclusions" class="section level1">
+<h1>Conclusions</h1>
+<p>In this activity we have learned to format and print out a poem using
+python. We have also learned how we can use functions such as ‘sleep’
+for a more dramatic effect.</p>
+<p>You might wonder how this could be used in later work. Many games are
+written using python as a programming language. These might have blocks
+of text or dialogue that we might want to space out and format. You
+could use the skills learned here to do so. Alternatively, when writing
+software, programmers often like to include quotes as outputs to keep
+their users entertained and show that the software is doing
+something.</p>
 <p><img src="images/logo.png" style="float: right;"/></p>
 </div>
 
@@ -455,6 +600,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {
