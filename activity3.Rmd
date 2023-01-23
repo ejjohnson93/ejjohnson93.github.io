@@ -1,5 +1,5 @@
 ---
-title: "Activity 3 - data analysis"
+title: "Activity 3 - Python plotting"
 output: html_document
 ---
 
@@ -11,16 +11,24 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
+One of the most popular uses for python is for data analysis and visualisation. You might have created a graph in MicroSoft Excel before. During this process we have to click around the software to modify our graph's appearance/what data it takes as an input. This might not take too much time if you're only doing it once but what if you had to make similar graphs another ten times? A hundred times? Or a thousand times? The process would quickly get very boring, take a lot of time, and you'd be more likely to make mistakes. 
 
+We can use a python package called `matplotlib` to help us plot data using python. In this case, our program is a series of instructions telling matplotlib what data to use and how to format it. Its incredibly customisable and you can use the same code over and over again. 
 
 <br> 
 <br>
 
+# Python plotting
+
 ## Case study 1 - women in STEM
 
 
+
+
 <br>
 <br>
+
+# Supplementary activities
 
 ## Case study 2 - global warming
 

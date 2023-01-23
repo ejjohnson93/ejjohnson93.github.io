@@ -30,6 +30,9 @@ navbar:
   right:
   - icon: fab fa-twitter
     href: https://twitter.com/LivUniCBF
+  - icon: fab fa-github
+    text: Source code
+    href: https://github.com/CBFLivUni/testing
 output:
   html_document:
     toc: yes

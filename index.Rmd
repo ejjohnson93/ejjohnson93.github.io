@@ -3,10 +3,11 @@ title: "Welcome!"
 output: html_document
 ---
 
+WIP: going to add parallax scrolling: https://github.com/holtzy/R-Markdown-Parallax
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
 
 Text text text
 
