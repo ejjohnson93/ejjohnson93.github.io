@@ -15,6 +15,7 @@ One of the most popular uses for python is for data analysis and visualisation. 
 
 We can use a python package called `matplotlib` to help us plot data using python. In this case, our program is a series of instructions telling matplotlib what data to use and how to format it. Its incredibly customisable and you can use the same code over and over again. 
 
+
 <br> 
 <br>
 
