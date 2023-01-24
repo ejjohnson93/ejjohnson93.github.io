@@ -11,7 +11,7 @@
 
 
 
-<title>Activity 3 - data analysis</title>
+<title>Activity 3 - Python plotting</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -389,6 +389,13 @@ div.tocify {
      
   </a>
 </li>
+<li>
+  <a href="https://github.com/CBFLivUni/testing">
+    <span class="fab fa-github"></span>
+     
+    Source code
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -406,7 +413,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Activity 3 - data analysis</h1>
+<h1 class="title toc-ignore">Activity 3 - Python plotting</h1>
 
 </div>
 
@@ -414,18 +421,109 @@ div.tocify {
 <p><br></p>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p><br> <br></p>
-<div id="case-study-1---women-in-stem" class="section level2">
-<h2>Case study 1 - women in STEM</h2>
+<p>One of the most popular uses for python is for data analysis and
+visualisation. You might have created a graph in MicroSoft Excel before.
+During this process we have to click around the software to modify our
+graph’s appearance/what data it takes as an input. This might not take
+too much time if you’re only doing it once but what if you had to make
+similar graphs another ten times? A hundred times? Or a thousand times?
+The process would quickly get very boring, take a lot of time, and you’d
+be more likely to make mistakes.</p>
+<p>We can use a python package called <code>matplotlib</code> to help us
+plot data using python. In this case, our program is a series of
+instructions telling matplotlib what data to use and how to format it.
+Its very customisable and you can use the same code over and over
+again.</p>
 <p><br> <br></p>
 </div>
-<div id="case-study-2---global-warming" class="section level2">
-<h2>Case study 2 - global warming</h2>
+<div id="python-plotting" class="section level1">
+<h1>Python plotting</h1>
+<div id="women-in-stem" class="section level2">
+<h2>Women in STEM</h2>
+<p>In the following activity we are going to create our own customised
+version of the following graph:</p>
+<p><br></p>
+<center>
+<p><img src="images/12.png" /></p>
+</center>
+<p><br></p>
+<p>We will use our own colours, line widths and line styles! In our
+previous activities we used replit to run all our code contained in a
+python script. This was ideal as we wanted to run all our code in one
+go. However, in this activity we want to be able to customise our graphs
+in an interactive way. Because of this we are going to use a type of
+python notebook called a ‘Jupyter notebook’. A Jupyter notebook allows
+you to create small blocks of code and run the blocks one at a time. You
+can make changes to just one block and see what happens.</p>
+<p>We have created an empty Jupyter notebook for you to use at the
+following link: <a href="link">insert</a>. It should look like this:</p>
+<p><br></p>
+<p><br></p>
+<div id="load-our-packages" class="section level3">
+<h3>Load our packages</h3>
+<p>In the previous activity we loaded a python package called
+<code>sleep</code> that contained functions to let python carry out
+additional tasks. Python does not know how to process and plot data on
+its own. So in this activity we’re going to need to load two extra
+packages known as ‘pandas’ and ‘matplotlib’. ‘Pandas’ is a package that
+lets python read and edit data, much like you’d use Excel to process raw
+data. ‘Matplotlib’ is the package that then lets us plot the data. We’d
+load them by pasting the following code into our first chunk and
+pressing the play button:</p>
+<pre class="python"><code>
+import matplotlib.pyplot as plt
+import pandas as pd</code></pre>
+<p><br></p>
+<p>You might notice the code is slightly different from activity 2.</p>
+<p>Instead of <code>import &lt;packagename&gt;</code> we have
+<code>import &lt;packagename&gt; as &lt;newname&gt;</code> .</p>
+<p>In activity 2, we mentioned that to use the functions contained
+inside a package we need the package name, then a full stop, then the
+function, like so:</p>
+<p><code>time.sleep</code></p>
+<p><br></p>
+<p>However, ‘Matplotlib.pyplot’ is quite a lot of letters to type every
+time! Each time we used it we’d have to type:</p>
+<p><code>matplotlib.pyplot.plot</code></p>
+<p><br></p>
+<p>Instead, we can rename the package as we import it to something
+simple and easy to remember. In this case ‘plt’. So the above line of
+code would become:</p>
+<p><code>plt.plot</code></p>
+<p><br></p>
+<p>To summarise, this is how we load and rename a package:</p>
+<p><br></p>
+<center>
+<p><img src="images/import2.png" width="535" /></p>
+</center>
 <p><br> <br></p>
 </div>
-<div id="case-study-3---cfc-release-vs-hole-in-ozone-layer"
-class="section level2">
-<h2>Case study 3 - CFC release vs hole in ozone layer</h2>
+<div id="load-the-data" class="section level3">
+<h3>Load the data</h3>
+<p>The data we’re going to be using can be found <a
+href="https://raw.githubusercontent.com/ejjohnson93/ejjohnson93.github.io/main/data/women_stem_data.csv">here</a>.
+We are going to load it using the package mentioned earlier ‘pandas’.
+Remember, we have loaded ‘pandas’ and renamed it to ‘pd’.</p>
+<p><br></p>
+<p>So the code to load the data is:</p>
+<pre class="python"><code>
+data = pd.read_csv(&quot;https://raw.githubusercontent.com/ejjohnson93/ejjohnson93.github.io/main/data/women_stem_data.csv&quot;)</code></pre>
+<p>In this case we use the <code>read_csv</code> function contained
+inside the ‘pandas’ package to load the data at the url. We then store
+it in a variable called ‘data’ using the equals sign.</p>
+<p><br><br></p>
+</div>
+<div id="plot-it" class="section level3">
+<h3>Plot it!</h3>
+<p><br><br></p>
+</div>
+</div>
+</div>
+<div id="supplementary-activities" class="section level1">
+<h1>Supplementary activities</h1>
+<div id="map-creation" class="section level2">
+<h2>Map creation</h2>
+<p><br> <br></p>
 <p><img src="images/logo.png" style="float: right;"/></p>
 </div>
 </div>

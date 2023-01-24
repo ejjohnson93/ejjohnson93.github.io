@@ -23,7 +23,19 @@ Ada Lovelace, the first programmer, was the daughter of British poet Lord Byron.
 
 <br>
 
-Growing up, Ava Lovelace received tutoring in mathematics. Her mother encouraged this, not just because she strongly believed in women's education, but also to counter the dangerous poetic tendencies of her father. Her legacy is one that sees the beauty in . In this activity we bring programming together with poetry. The aim of this activity is to print and format a poem using python.
+Growing up, Ava Lovelace received tutoring in mathematics. Her mother encouraged this, not just because she strongly believed in women's education, but also to counter the dangerous poetic tendencies of her father. Her legacy is one that sees the beauty in mathematics and science.
+
+<br>
+
+<center>
+
+![](images/combined-2.jpg){width="514"}
+
+</center>
+
+<br>
+
+In this activity we bring programming together with poetry. The aim of this activity is to print and format a poem using python.
 
 <br> <br>
 
@@ -134,9 +146,19 @@ print("\n")
 
 Our code currently prints all the lines of our poem at once. But maybe we want to give each line some time to 'breath'. We can modify our program to add a delay between each line.
 
-There is a python package called 'time'. Python packages contain additional commands to allow us to carry out certain tasks. 'Time' contains a function called `sleep` that will allow us to add a pause between each line.
+There is a python package called 'time'. Python packages contain additional commands that don't come installed with python, and allow us to carry out certain extra tasks. The package 'time' contains a function called `sleep` that lets us add a pause between each line. Before we can use `sleep` we need to tell python to load the package 'time'. We do this using the `import` command:
 
-An example usage of sleep is below:
+<br>
+
+<center>
+
+![](images/import1.png)
+
+</center>
+
+<br>
+
+Once we've imported the package we can then use it. An example of loading 'time' and using `sleep` is below:
 
 ```{python, eval=FALSE}
 
@@ -151,7 +173,7 @@ print(" — Christy Ann Martine")
 
 ```
 
-If we hover over the names of the functions replit will give us some information about that function.
+You might notice that we need to include the package name 'time' before `sleep` when we use it. This is because python won't recognise the function `sleep` on its own, it needs to know it comes from 'time'. If we hover over the names of the functions replit will give us some information about that function.
 
 ![](images/replit13.png)
 
@@ -183,6 +205,6 @@ print("And never stops—at all—")
 
 In this activity we have learned to format and print out a poem using python. We have also learned how we can use functions such as 'sleep' for a more dramatic effect.
 
-You might wonder how this could be used in later work. Many games are written using python as a programming language. These might have blocks of text or dialogue that we might want to space out and format. You could use the skills learned here to do so. Alternatively, when writing software, programmers often like to include quotes as outputs to keep their users entertained and show that the software is doing something.
+You might wonder how this could be used in later work. Here we have shown you a simple example of loading and using a package that doesn't come installed with python. Additionally, many games are written using python as a programming language. These might have blocks of text or dialogue that we might want to space out and format. You could use the skills learned here to do so. When writing software, programmers often like to include quotes as outputs to keep their users entertained and show that the software is doing something.
 
 <img src="./images/logo.png" style="float: right;"/>
