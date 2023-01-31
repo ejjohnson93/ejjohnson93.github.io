@@ -9,6 +9,6 @@ WIP: going to add parallax scrolling: https://github.com/holtzy/R-Markdown-Paral
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Text text text
+# 
 
 <img src="./images/logo.png" style="float: right;"/>

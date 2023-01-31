@@ -7,7 +7,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Our offices are situated in the Faculty of Health and Life Sciences at the University of Liverpool. 
+These materials are developed by the University of Liverpool's [Computational Biology facility](https://www.liverpool.ac.uk/computational-biology-facility/). Our offices are situated in the Faculty of Health and Life Sciences at the University of Liverpool. 
 
 <br>
 

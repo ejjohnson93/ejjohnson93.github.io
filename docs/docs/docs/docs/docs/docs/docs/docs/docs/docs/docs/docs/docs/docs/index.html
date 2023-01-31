@@ -411,12 +411,29 @@ div.tocify {
 </div>
 
 
-<header>
-<h1>
-<p>Land of the Lost</p>
-</h1>
-<p><img src="images/homepage-banner-2.jpg"/></p>
-</header>
+<style>
+.parallax { 
+    /* The image used */
+    background-image: "./images/homepage-banner-2.jpg";
+
+    /* Set a specific height */
+    height: 400px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.myimg{
+    width: 10%;
+    color: red;
+    position: absolute;
+    top: 150px;
+    left: 45%;
+}
+</style>
 <p>Text text text</p>
 <p><img src="images/logo.png" style="float: right;"/></p>
 

@@ -1,0 +1,18 @@
+---
+title: "Activity 3 - Python plotting"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<br>
+
+# Introduction
+
+text text
+
+<br> <br>
+
+<img src="./images/logo.png" style="float: right;"/>
