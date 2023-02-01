@@ -85,6 +85,8 @@ On the left we need to scroll down until we find the 'write' word block. We then
 
 </center>
 
+<br>
+
 When our program is ready we press the 'play' button in the bottom right. Once we're finished/we want to make any modifications to it we then press the 'stop' button in the bottom right.
 
 <b>Challenge: modify your word block to make the screen say something else instead. For example I might put 'Hello Emily!'</b>
@@ -117,13 +119,60 @@ This will bring up an interface that looks like this:
 
 <br>
 
-text text
+Rather than being entirely empty LEGO has already written some of the code for us. The first 4 lines import all the relevant packages we might need. Line 7 readies the hub.
 
 <center>
+
+<br>
 
 ![](images/editing_images4.png)
 
 </center>
+
+<br>
+
+We can see it also includes comments (beginning with '#'). Line 9 onwards is where we'll write our program.
+
+<br>
+
+We are going to replace
+
+`hub.speaker.beep()`
+
+with
+
+`hub.light_matrix.write("Hello world!")`
+
+<br>
+
+<center>
+
+![](images/editing_images5.png)
+
+</center>
+
+<br>
+
+If you get stuck you can reveal the full code used by clicking the 'code' button to the right:
+
+```{python, eval=FALSE, class.source = 'fold-hide'}
+
+from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+
+# Write your program here.
+hub.light_matrix.write("Hello world!")
+
+```
+
+
+<b>Challenge: modify your code so it prints the same message as your word block earlier. </b>
+
 
 <br> <br>
 

@@ -13,11 +13,11 @@ navbar:
       href: activity2.html
     - text: Activity 3 - data analaysis
       href: activity3.html
-  - text: Extra activities
+  - text: Robot activities
     menu:
-    - text: Python game
-      href: blank.html
-    - text: Python drawing
+    - text: Hello LEGO!
+      href: mindstorm2.html
+    - text: Motors and movement
       href: blank.html
   - text: Learning resources
     menu:
