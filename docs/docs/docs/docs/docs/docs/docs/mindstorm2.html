@@ -457,6 +457,7 @@ app we can use to create and run our code in.</p>
 MINDSTORMS 10.5.0’.</p>
 <p><br></p>
 <p>We create a new project by going to file &gt; New project :</p>
+<p><br></p>
 <center>
 <p><img src="images/LEGO1.png" /></p>
 </center>
@@ -464,16 +465,77 @@ MINDSTORMS 10.5.0’.</p>
 <p>Then we create a word block project. We can call it anything we like
 but I’d suggest ‘hello world’. We need to make sure we select ‘word
 blocks’, then click create.</p>
+<p><br></p>
 <center>
 <p><img src="images/hello_world.png" /></p>
 </center>
 <p><br></p>
 <p>This will then bring up an interface which looks like this:</p>
 <p><img src="images/editing_images.png" /></p>
+<p>On the left we need to scroll down until we find the ‘write’ word
+block. We then edit the text inside the word block to say ‘Hello
+world!’.</p>
+<p><br></p>
+<center>
+<p><img src="images/LEGO2.png" /></p>
+</center>
+<p><br></p>
+<p>When our program is ready we press the ‘play’ button in the bottom
+right. Once we’re finished/we want to make any modifications to it we
+then press the ‘stop’ button in the bottom right.</p>
+<p><b>Challenge: modify your word block to make the screen say something
+else instead. For example I might put ‘Hello Emily!’</b></p>
 <p><br><br></p>
 </div>
 <div id="python" class="section level2">
 <h2>Python</h2>
+<p>Now we are going to go through the same process but with Python
+instead. Once again we need to click file &gt; New project.</p>
+<p>This time though, we select python instead of word blocks:</p>
+<p><br></p>
+<center>
+<p><img src="images/hello_world2.png" /></p>
+</center>
+<p><br></p>
+<p>This will bring up an interface that looks like this:</p>
+<center>
+<p><img src="images/editing_images3.png" /></p>
+</center>
+<p><br></p>
+<p>Rather than being entirely empty LEGO has already written some of the
+code for us. The first 4 lines import all the relevant packages we might
+need. Line 7 readies the hub.</p>
+<center>
+<p><br></p>
+<p><img src="images/editing_images4.png" /></p>
+</center>
+<p><br></p>
+<p>We can see it also includes comments (beginning with ‘#’). Line 9
+onwards is where we’ll write our program.</p>
+<p><br></p>
+<p>We are going to replace</p>
+<p><code>hub.speaker.beep()</code></p>
+<p>with</p>
+<p><code>hub.light_matrix.write("Hello world!")</code></p>
+<p><br></p>
+<center>
+<p><img src="images/editing_images5.png" /></p>
+</center>
+<p><br></p>
+<p>If you get stuck you can reveal the full code used by clicking the
+‘code’ button to the right:</p>
+<pre class="python fold-hide"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+
+# Write your program here.
+hub.light_matrix.write(&quot;Hello world!&quot;)</code></pre>
+<p><b>Challenge: modify your code so it prints the same message as your
+word block earlier. </b></p>
 <p><br> <br></p>
 <p><img src="images/logo.png" style="float: right;"/></p>
 </div>

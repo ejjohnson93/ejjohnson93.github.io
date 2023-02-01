@@ -479,6 +479,7 @@ world!’.</p>
 <center>
 <p><img src="images/LEGO2.png" /></p>
 </center>
+<p><br></p>
 <p>When our program is ready we press the ‘play’ button in the bottom
 right. Once we’re finished/we want to make any modifications to it we
 then press the ‘stop’ button in the bottom right.</p>
@@ -511,14 +512,18 @@ need. Line 7 readies the hub.</p>
 <p><br></p>
 <p>We can see it also includes comments (beginning with ‘#’). Line 9
 onwards is where we’ll write our program.</p>
+<p><br></p>
 <p>We are going to replace</p>
 <p><code>hub.speaker.beep()</code></p>
 <p>with</p>
 <p><code>hub.light_matrix.write("Hello world!")</code></p>
+<p><br></p>
 <center>
 <p><img src="images/editing_images5.png" /></p>
 </center>
 <p><br></p>
+<p>If you get stuck you can reveal the full code used by clicking the
+‘code’ button to the right:</p>
 <pre class="python fold-hide"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
 from mindstorms.control import wait_for_seconds, wait_until, Timer
 from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
@@ -529,6 +534,8 @@ hub = MSHub()
 
 # Write your program here.
 hub.light_matrix.write(&quot;Hello world!&quot;)</code></pre>
+<p><b>Challenge: modify your code so it prints the same message as your
+word block earlier. </b></p>
 <p><br> <br></p>
 <p><img src="images/logo.png" style="float: right;"/></p>
 </div>

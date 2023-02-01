@@ -350,16 +350,16 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Extra activities
+    Robot activities
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="blank.html">Python game</a>
+      <a href="mindstorm2.html">Hello LEGO!</a>
     </li>
     <li>
-      <a href="blank.html">Python drawing</a>
+      <a href="blank.html">Motors and movement</a>
     </li>
   </ul>
 </li>
@@ -389,6 +389,13 @@ div.tocify {
      
   </a>
 </li>
+<li>
+  <a href="https://github.com/CBFLivUni/testing">
+    <span class="fab fa-github"></span>
+     
+    Source code
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -414,22 +421,34 @@ div.tocify {
 <p><br></p>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>You can think of programming as a language that we use to talk to and
-be understood by computers. Like all languages you need to know the
-vocabulary and grammar. As you learn to program you develop problem
-solving skills. These problem solving skills are broadly applicable
-across all programming languages, so after learning one language you can
-learn a second much more easily.</p>
-<p>We have selected python for you to learn as it was designed to be
-easier for a human to read and write.</p>
+<p>Computers speak their own language known as ‘machine code’. To humans
+this language is completely unreadable, so we needed to create something
+we could use to speak to computers. You can think of programming as a
+language that we use to talk to and be understood by computer. For
+comparison, imagine a situation where you speak English as your first
+language and French as your second. You meet someone who speaks German
+as their first language and French as their second, so you both have to
+communicate in French to understand each other!</p>
+<p><br> There are many programming languages, with different strengths
+and weaknesses. Like all languages you need to know the vocabulary and
+grammar, which can seem quite overwhelming at first. However, as you
+learn to program you develop your vocabulary problem solving skills.
+These problem solving skills are broadly applicable across all
+programming languages, so after learning one language you can learn a
+second much more easily!</p>
+<p>These activities are designed to give you a first introduction to a
+programming language. We have selected python for you to learn as the
+‘code’ (i.e. the vocabulary) was designed to be easier for humans to
+read and write. However, there is nothing stopping you from using the
+skills you’ve gained to learn a new programming language later on.</p>
 <p><br></p>
 </div>
 <div id="replit" class="section level1">
 <h1>replit</h1>
-<p>For these activities we will be using <code>replit</code>, a free
-online IDE. An IDE (integrated development environment) is an
-interactive way to build, test and edit code. Replit is just one of
-many, the link to it can be found here: <a href="https://replit.com/"
+<p>For these activities we will be using <code>replit</code>, a free web
+editor. Replit is an interactive way to write, test and edit your code.
+It also allows multiple people to collaborate at the same time. The link
+to it can be found here: <a href="https://replit.com/"
 class="uri">https://replit.com/</a></p>
 <p>You first need to create an account.</p>
 <p>After this, Replit will ask you how familiar you are with
@@ -447,10 +466,10 @@ Create Repl’ and we can begin our first coding activity.</p>
 </div>
 <div id="hello-world" class="section level1">
 <h1>Hello world!</h1>
-<p>A program is a precise set of instructions expressed in a programming
-language. The machine then translates this programming language into a
-form it can understand - machine code. We are now going to write our
-first python program using Replit.</p>
+<p>A program is a precise set of instructions (known as ‘code’)
+expressed in a programming language. The machine then translates this
+programming language into a form it can understand - machine code. We
+are now going to write our first python program using Replit.</p>
 <p>There will already be a python script open called ‘main.py’. We’ll
 start by writing our code in this. The output of this script will appear
 on the right in the ‘console’.</p>
@@ -465,10 +484,10 @@ language. Copy and paste (or type) the following code into
 something like this:</p>
 <p><img src="images/replit8.png" /></p>
 <p><br></p>
-<p>Our program used the command <code>print</code> to print out the text
-inside the quotation marks (this is equivalent to the <code>say</code>
-block in scratch). We could store this text in something known as a
-variable and then print this variable out.</p>
+<p>Our program used the function <code>print</code> to print out the
+text inside the quotation marks (this is equivalent to the
+<code>say</code> block in scratch). We could store this text in
+something known as a variable and then print this variable out.</p>
 <p>An example of this is below. Note the lines that begin with ‘#’,
 these are comments to remind us what our code does and aren’t read by
 the interpreter.</p>
@@ -490,7 +509,7 @@ Anything you like.</p>
 programs might expect user interaction. Next, we are going to write a
 program the prompts a user for an input, in this case your name. It
 stores the name in the variable ‘name’ and then prints the name out.</p>
-<pre class="python"><code># Use the &#39;input&#39; command to ask the user to provide an input and store it in variable &#39;name&#39;
+<pre class="python"><code># Use the &#39;input&#39; function to ask the user to provide an input and store it in variable &#39;name&#39;
 name = input(&quot;Enter name: &quot;)
 
 # Print the variable hello
@@ -500,7 +519,7 @@ print(&quot;Hello, your name is&quot;, name)</code></pre>
 imagines you’re having a conversation with a robot. It will first ask
 you for your name, then it will ask you to name it. The program will
 then print out your name and the name you gave it.</p>
-<pre class="python"><code># Use the &#39;input&#39; command to ask the user to provide an input and store it in variable &#39;name&#39;
+<pre class="python"><code># Use the &#39;input&#39; function to ask the user to provide an input and store it in variable &#39;name&#39;
 name1 = input(&quot;What is your name? : &quot;)
 name2 = input(&quot;What is my name? : &quot;)
 
