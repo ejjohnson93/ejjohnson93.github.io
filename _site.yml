@@ -11,14 +11,16 @@ navbar:
       href: activity1.html
     - text: Activity 2 - python poem
       href: activity2.html
-    - text: Activity 3 - data analaysis
+    - text: Activity 3 - data analysis
       href: activity3.html
   - text: Robot activities
     menu:
     - text: Hello LEGO!
       href: mindstorm2.html
+    - text: speakers and sound
+      href: mindstorm3.html
     - text: Motors and movement
-      href: blank.html
+      href: mindstorm4.html
   - text: Learning resources
     menu:
     - text: Set up python at home

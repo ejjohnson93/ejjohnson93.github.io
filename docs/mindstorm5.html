@@ -11,7 +11,7 @@
 
 
 
-<title>About us</title>
+<title>LEGO activity 4 - motors and movement</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -359,10 +359,7 @@ div.tocify {
       <a href="mindstorm2.html">Hello LEGO!</a>
     </li>
     <li>
-      <a href="mindstorm3.html">speakers and sound</a>
-    </li>
-    <li>
-      <a href="mindstorm4.html">Motors and movement</a>
+      <a href="blank.html">Motors and movement</a>
     </li>
   </ul>
 </li>
@@ -416,35 +413,275 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">About us</h1>
+<h1 class="title toc-ignore">LEGO activity 4 - motors and movement</h1>
 
 </div>
 
 
-<p>These materials are developed by the University of Liverpool’s <a
-href="https://www.liverpool.ac.uk/computational-biology-facility/">Computational
-Biology facility</a>. Our offices are situated in the Faculty of Health
-and Life Sciences at the University of Liverpool.</p>
 <p><br></p>
-<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2378.407389253649!2d-2.963564694756717!3d53.40753997996218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sComputational%20Biology%20Facility%2C%20University%20of%20Liverpool%20MerseyBio%2C%20Crown%20Street%2C%20L69%207ZB!5e0!3m2!1sen!2suk!4v1673915169390!5m2!1sen!2suk" width="400" height="300" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-<p><img src="images/uni_liverpool.png" width="122" /></p>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>So far we have just made use of the features included on the hub. In
+this activity we are going to introduce the distance sensor and motors
+on our robot.</p>
+<p>The motors and distance sensors look like this:</p>
+<center>
+<p><img src="images/motor.png" width="640" /></p>
+<p><img src="images/LEGO_45604_SPIKE_5db0634679dbf.jpg"
+width="475" /></p>
+</center>
 <p><br></p>
-<p>You can find our website/learn more about us here: <a
-href="https://www.liverpool.ac.uk/computational-biology-facility/"
-class="uri">https://www.liverpool.ac.uk/computational-biology-facility/</a></p>
-<p>We can be contacted using the following email addresses:</p>
+<p>We will introduce the motors first and then the distance sensor
+later.</p>
+<p>The aims of this activity are:</p>
 <ul>
-<li><p><a href="mailto:cbf@liverpool.ac.uk">cbf@liverpool.ac.uk</a>
-(general contact)</p></li>
-<li><p>Emily.Johnson@liverpool.ac.uk (specific contact for this
-content)</p></li>
+<li><p>To program the motors to move our robot in straight lines and
+circles</p></li>
+<li><p>To incorporate the distance sensor into our program and use it
+top stop movement</p></li>
 </ul>
-<p>Or using the following phone number:</p>
+<p><br> <br></p>
+</div>
+<div id="straight-lines-and-circles" class="section level1">
+<h1>Straight lines and circles</h1>
+<div id="word-blocks" class="section level2">
+<h2>Word blocks</h2>
+<p>To begin we will configure out motors and let our program know they
+are plugged into slots A &amp; B of the hub. We tell our program these
+motors are paired so both can be controlled together.</p>
+<p><br></p>
+<center>
+<p><img src="images/lego20.png" /></p>
+</center>
+<p><br></p>
+<p>After this, we can use one of two movement blocks to make it move
+forward. I recommend the second as it gives you more control over the
+direction.</p>
+<p><br></p>
+<center>
+<p><img src="images/lego21.png" /></p>
+<p><img src="images/lego22.png" /></p>
+</center>
+<p><br></p>
+<p>A simple program to make our robot move forward would be:</p>
+<p><br></p>
+<center>
+<p><img src="images/lego23.png" /></p>
+</center>
+<p><br></p>
+<p>To make the robot move backwards we could instead use:</p>
+<p><br></p>
+<center>
+<p><img src="images/lego24.png" /></p>
+</center>
+<p><br></p>
+<p><b>Challenge:</p>
 <ul>
-<li>+44 (0) 151 795 5473</li>
+<li><p>Try to move the robot forward whilst turning left.</p></li>
+<li><p>Try and make the robot spin in a circle. There are multiple ways
+to do this with word blocks. </b></p></li>
 </ul>
+<p><br><br></p>
+</div>
+<div id="python" class="section level2">
+<h2>Python</h2>
+<p>As before, we’re going to translate our program into python. There is
+a notable change on line 8 where we add
+<code>movement_motors = MotorPair("A", "B").</code></p>
+<p>This is equivalent to the ‘set movement motors’ word block from
+earlier. It creates a motor pair and then allows us to use the movement
+functions.</p>
+<p>Then on line 11 we can then use the ‘move’ function contained inside
+our motor pair. Move takes four arguments, a number, a unit, the
+steering and the speed. The number is used in combination with the unit
+and will determine how much the motors spin. Negative values make them
+spin backwards. The unit can be ‘cm’, ‘in’, ‘rotations’ or ‘degrees’.
+Steering determines the direction, negative values make the robot turn
+left and positive values make the robot turn right. A final optional
+argument is speed, this determines how fast or slow the robot goes and
+can be between -100 and 100.</p>
+<p>As in the previous activity we could consult the python help manual
+if we wanted more information!</p>
+<p><br></p>
+<center>
+<p><img src="images/lego26.png" /></p>
+</center>
+<pre class="python fold-hide"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+movement_motors = MotorPair(&quot;A&quot;, &quot;B&quot;)
+
+# Write your program here.
+movement_motors.move(10, &#39;cm&#39;, steering = 0)</code></pre>
+<p>Challenge:</p>
+<ul>
+<li><p>Make the robot move forwards or backwards using python!</p></li>
+<li><p>Experiment with different units, steering and speed. How do they
+compare?</p></li>
+<li><p>Can you make the robot spin in a circle?</p></li>
+</ul>
+<p><br><br></p>
+</div>
+</div>
+<div id="distance-sensor" class="section level1">
+<h1>Distance sensor</h1>
+<div id="word-blocks-1" class="section level2">
+<h2>Word blocks</h2>
+<p>In our previous example we were just running our robot for set
+distances. But what if we want our robot to be able to respond to
+problems it encounters and <i>react</i> to them. To do this we can make
+use of the distance sensor on the front of the robot. The distance
+sensor uses ultrasonic signalling to determine how far away objects are.
+This is like the echolocation animals and submarines use:</p>
+<p><br></p>
+<center>
+<p><a
+href="https://www.sciencefocus.com/nature/how-does-echolocation-work/"><img
+src="images/echolocation.png" alt="Credit: BBC Science Focus" /></a></p>
+</center>
+<p><br></p>
+<p>We are going to create a program that makes our robot:</p>
+<ul>
+<li><p>Start moving continuously in a straight line</p></li>
+<li><p>Wait until the distance sensor detects an object/obstacle closer
+than 10 cm</p></li>
+<li><p>Stop moving</p></li>
+</ul>
+<p>The program is below:</p>
+<p><br></p>
+<center>
+<p><img src="images/lego18.png" /></p>
+</center>
+<p><br></p>
+<p>You can see in the program we set the motors as port A &amp; B. The
+distance sensor is plugged into port D and we need to make sure to
+select that. We use the ‘control’ block ‘wait until’ to add the
+condition, then scroll down to the sensors to find the condition.</p>
+<p><br><br></p>
+</div>
+<div id="python-1" class="section level2">
+<h2>Python</h2>
+<p>Once again we are going to translate our code into python. Hopefully
+you’re beginning to get a sense of how the word blocks are converted
+into python code.</p>
+<p>In the previous section we added a line to our python code that let
+us use the motor functions. Now there is an additional command (line 9)
+to let us access the distance sensor functions.</p>
+<p>Lines 12-14 then contain our program. It follows the same basic steps
+as the word blocks above. The distance sensor object contains the
+function <code>wait_for_distance_closer_than()</code> which we pass a
+number and unit to. After the distance sensor registers something closer
+than 10 cm it then moves onto the next line and stops the motors.</p>
+<p><br></p>
+<center>
+<p><img src="images/lego19.png" /></p>
+</center>
+<pre class="python fold-hide"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+movement_motors = MotorPair(&quot;A&quot;, &quot;B&quot;)
+distance_sensor = DistanceSensor(&quot;D&quot;)
+
+# Write your program here
+movement_motors.start()
+distance_sensor.wait_for_distance_closer_than(10, &quot;cm&quot;)
+movement_motors.stop()</code></pre>
+<p><br></p>
+<p><b>Challenge: can you create a program that makes the robot move
+backwards when the distance sensor is covered by an obstacle (e.g. your
+hand)? You can first try constructing this using the word blocks.
+</b></p>
+<p>If you get stuck the code is below (click the ‘code’ button to
+reveal):</p>
+<pre class="python fold-hide"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+movement_motors = MotorPair(&quot;A&quot;, &quot;B&quot;)
+distance_sensor = DistanceSensor(&quot;D&quot;)
+
+# Write your program here
+distance_sensor.wait_for_distance_closer_than(10, &quot;cm&quot;)
+# Speed was set to 40 so the backwards movement isn&#39;t too jumpy
+movement_motors.move(-10, &#39;cm&#39;, steering = 0, speed = 40)</code></pre>
+<p>A problem you might have encountered when trying to program this, and
+in the above code, is that it only triggers once. You put your hand in
+front for example, the robot moves backwards, then it doesn’t do
+anything again. This is because it has reached the end of the program
+and won’t cycle back through the code.</p>
+<p>In the <a href="mindstorm3.html">speakers and sound</a> activity we
+used a <i>for loop</i> to loop through out code a set number of times.
+We could apply this idea to our program (click the ‘code’ button to
+reveal):</p>
+<pre class="python fold-hide"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+movement_motors = MotorPair(&quot;A&quot;, &quot;B&quot;)
+distance_sensor = DistanceSensor(&quot;D&quot;)
+
+# Write your program here
+for i in range(3):
+    distance_sensor.wait_for_distance_closer_than(10, &quot;cm&quot;)
+    movement_motors.move(-10, &#39;cm&#39;, steering = 0, speed = 40)</code></pre>
+<p>This means our program will loop three times, meaning waits for the
+distance sensor to be triggered three times. But this still has the
+problem of only working a limited number of times and then stopping.
+What if we want our robot to respond whenever the trigger occurs? We can
+use another type of loop called a <i>‘while loop’</i> to do so. We are
+going to create a while loop that loops forever, meaning the program
+will trigger every time the distance sensor detects something closer
+them 10 cm. Try the code below and see what happens (click the ‘code’
+button to reveal):</p>
+<pre class="python fold-hide"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+movement_motors = MotorPair(&quot;A&quot;, &quot;B&quot;)
+distance_sensor = DistanceSensor(&quot;D&quot;)
+
+# Write your program here
+while True:
+    distance_sensor.wait_for_distance_closer_than(10, &quot;cm&quot;)
+    movement_motors.move(-10, &#39;cm&#39;, steering = 0, speed = 40)</code></pre>
+<p>This is the equivalent of using the ‘forever’ word block. Don’t worry
+if this seems quite complex and confusing, these are difficult concepts
+that would normally take weeks or months of study to fully wrap your
+head around. The idea here is just to showcase what is possible with
+python.</p>
+<p><br><br></p>
+</div>
+</div>
+<div id="summary" class="section level1">
+<h1>Summary</h1>
+<p>In this activity we have learned how to:</p>
+<ul>
+<li><p>Move our robot</p></li>
+<li><p>Get it to respond interactively to obstacles using the distance
+sensor</p></li>
+<li><p>Expanded on f<i>for loops</i> and introduced the idea of <i>while
+loops</i>.</p></li>
+</ul>
+<p><br></p>
 <p><img src="images/logo.png" style="float: right;"/></p>
+</div>
 
 
 

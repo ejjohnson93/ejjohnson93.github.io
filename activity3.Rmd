@@ -37,7 +37,7 @@ In the following activity we are going to create our own customised version of t
 
 We will use our own colours, line widths and line styles. In our previous activities we used replit to run all our code contained in a python script. This was ideal as we wanted to run all our code in one go. However, in this activity we want to be able to customise our graphs in an interactive way. Because of this we are going to use a type of python notebook called a 'Jupyter notebook'.
 
-We have created an empty Jupyter notebook for you to use at the following [link](https://mybinder.org/v2/gh/ejjohnson93/outreach_jupyter/HEAD?labpath=index.ipynb). It should look like this:
+We have created an empty Jupyter notebook for you to use at the following [link](https://mybinder.org/v2/gh/ejjohnson93/outreach_jupyter/HEAD?labpath=index.ipynb). Don't worry if it takes a while to load! As long as the circles are spinning it is just booting up, this might take 5 minutes or so. Once it has finished loading it should look like this:
 
 <br>
 

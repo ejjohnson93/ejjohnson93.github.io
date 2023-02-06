@@ -11,7 +11,7 @@
 
 
 
-<title>LEGO activity 1 - hello LEGO!</title>
+<title>LEGO activity 2 - speakers and sound</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -416,7 +416,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">LEGO activity 1 - hello LEGO!</h1>
+<h1 class="title toc-ignore">LEGO activity 2 - speakers and sound</h1>
 
 </div>
 
@@ -424,115 +424,41 @@ div.tocify {
 <p><br></p>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>Our other activities have hopefully built up some familiarity with
-Python and the idea of text based programming. We are now going to use
-Python to help us program LEGO Robots!</p>
-<p>The LEGO robot model used in this activity is the LEGO® MINDSTORMS®
-Robot Inventor. These robots can be built in several different ways.
-Ours looks like this:</p>
-<p><br></p>
-<center>
-<p><img src="images/1000x800p.jpg" width="587" /></p>
-</center>
-<p><br></p>
-<p>You may have used a block based programming language like Scratch
-before, or some equivalent. LEGO has it’s own equivalent called ‘word
-blocks’. In these activities we are first going to create our program
-using the word blocks, then translate those word blocks into Python.</p>
-<p><br><br></p>
+<p>In the first activity we used the word blocks and python to write a
+message on the light up screen. Next we are going to program the robot’s
+speakers.</p>
+<p>Like the previous activity we’ll first create the code using word
+blocks, then translate into python.</p>
+<p><br> <br></p>
 </div>
-<div id="hello-lego" class="section level1">
-<h1>Hello LEGO!</h1>
-<p>In activity 1 you will have created a ‘hello world!’ script. We are
-now going to create something similar but with our LEGO robot
-instead.</p>
-<p>The script will:</p>
-<ul>
-<li>Make the screen on the robot light up and scroll through the worlds
-‘Hello world’.</li>
-</ul>
-<p><br><br></p>
+<div id="play-a-beep" class="section level1">
+<h1>Play a beep</h1>
 <div id="word-blocks" class="section level2">
 <h2>Word blocks</h2>
-<p>Firstly, let’s create the word block version of our code. LEGO has an
-app we can use to create and run our code in.</p>
-<p>We already have this app open for you but it is called ‘LEGO
-MINDSTORMS 10.5.0’.</p>
-<p><br></p>
-<p>We create a new project by going to file &gt; New project :</p>
+<p>We’ll start with a very basic program, just making our hub play a
+single sound.</p>
+<p>Open a new project, select word blocks and then make the following
+program:</p>
 <p><br></p>
 <center>
-<p><img src="images/LEGO1.png" /></p>
+<p><img src="images/lego3.png" /></p>
 </center>
 <p><br></p>
-<p>Then we create a word block project. We can call it anything we like
-but I’d suggest ‘hello world’. We need to make sure we select ‘word
-blocks’, then click create.</p>
-<p><br></p>
-<center>
-<p><img src="images/hello_world.png" /></p>
-</center>
-<p><br></p>
-<p>This will then bring up an interface which looks like this:</p>
-<p><img src="images/editing_images.png" /></p>
-<p>On the left we need to scroll down until we find the ‘write’ word
-block. We then edit the text inside the word block to say ‘Hello
-world!’.</p>
-<p><br></p>
-<center>
-<p><img src="images/LEGO2.png" /></p>
-</center>
-<p><br></p>
-<p>When our program is ready we press the ‘play’ button in the bottom
-right. Once we’re finished/we want to make any modifications to it we
-then press the ‘stop’ button in the bottom right.</p>
-<p><b>Challenge: modify your word block to make the screen say something
-else instead. For example I might put ‘Hello Emily!’</b></p>
+<p>Not massively interesting so far but we’ll get there!</p>
 <p><br><br></p>
 </div>
 <div id="python" class="section level2">
 <h2>Python</h2>
-<p>Now we are going to go through the same process but with Python
-instead. Once again we need to click file &gt; New project.</p>
-<p>This time though, we select python instead of word blocks:</p>
+<p>Now we’re going to write that same program in python.</p>
+<p>As in the first activity we create a new project and select python,
+remember we can ignore the first 7 lines of code.</p>
+<p>Next, we’re going to edit line 10 to contain our program. The code is
+below (you can click the ‘code’ buttons to reveal the text if you want
+to copy and paste it throughout this page):</p>
 <p><br></p>
 <center>
-<p><img src="images/hello_world2.png" /></p>
+<p><img src="images/lego4.png" /></p>
 </center>
-<p><br></p>
-<p>This will bring up an interface that looks like this:</p>
-<center>
-<p><img src="images/editing_images3.png" /></p>
-</center>
-<p><br></p>
-<p>Rather than being entirely empty LEGO has already written some of the
-code for us. The first 4 lines import all the relevant packages we might
-need. Line 7 readies the hub by naming our hub object ‘hub’.</p>
-<center>
-<p><br></p>
-<p><img src="images/editing_images4.png" /></p>
-</center>
-<p><br></p>
-<p>We can see it also includes comments (beginning with ‘#’). Line 9
-onwards is where we’ll write our program.</p>
-<p><br></p>
-<p>We are going to replace</p>
-<p><code>hub.speaker.beep()</code></p>
-<p>with</p>
-<p><code>hub.light_matrix.write("Hello world!")</code></p>
-<p><br></p>
-<center>
-<p><img src="images/editing_images5.png" /></p>
-</center>
-<p><br></p>
-<p>To explain this code, inside our ‘hub’ object there are lots of
-different extra functions to let us work with the lights, speakers,
-motors and sensors. Within ‘hub’ we find the ‘light_matrix’ and then
-within ‘light_matrix’ there is a function to ‘write’. Each of these
-different components are separated by a full stop. This command broadly
-tells python to write a message of our choosing on the light matrix.</p>
-<p>If you get stuck you can reveal the full code used by clicking the
-‘code’ button to the right:</p>
 <pre class="python fold-hide"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
 from mindstorms.control import wait_for_seconds, wait_until, Timer
 from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
@@ -542,11 +468,286 @@ import math
 hub = MSHub()
 
 # Write your program here.
-hub.light_matrix.write(&quot;Hello world!&quot;)</code></pre>
-<p><b>Challenge: modify your code so it prints the same message as your
-word block earlier. </b></p>
+hub.speaker.beep(60, 0.25)</code></pre>
+<p><br></p>
+<p>In the previous activity we accessed the ‘light_matrix’ within ‘hub’.
+This time it is the speaker. The speaker has a ‘beep’ function and then
+we pass it two arguments: the tone and the length of the tone (in
+seconds). When you execute this code it does the same as the word blocks
+above.</p>
+<p><b>Challenge: try playing around with different numbers for the tone
+and the length. </b></p>
+<p>(Hint: the tone can be any number between 44 and 123. What happens
+what you use a number outside of this range?)</p>
+<p>We can also pass an optional third argument to the ‘beep’ function to
+control the volume. Try running the below code as an example:</p>
+<center>
+<p><img src="images/lego5.png" /></p>
+</center>
+<pre class="python fold-hide"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+
+# Write your program here.
+hub.speaker.beep(60, 1, 50)
+hub.speaker.beep(60, 1, 75)
+hub.speaker.beep(60, 1, 100)</code></pre>
+<p><br> <br></p>
+</div>
+</div>
+<div id="play-a-sound" class="section level1">
+<h1>Play a sound</h1>
+<p>As well as being able to beep in different tones, the hub also comes
+with lots of inbuilt sounds you can use. If we scroll down to the sound
+work blocks there is a block that says ‘play sound &lt;x&gt; until
+done’.</p>
+<p><br></p>
+<center>
+<p><img src="images/lego7.png" /></p>
+</center>
+<p><br></p>
+<p>If you click ‘add sound’ you can see all the sounds that are
+available on the hub. Let’s create a simple program that plays three
+different sounds sequentially:</p>
+<p><br></p>
+<center>
+<p><img src="images/lego6.png" /></p>
+</center>
+<p><br></p>
+<p>You might notice there is another sound block called ‘start sound
+&lt;x&gt;’. What happens if you use this instead?</p>
+<p><br></p>
+<p>Now let’s translate the above code into python again.</p>
+<p><br></p>
+<center>
+<p><img src="images/lego8.png" /></p>
+</center>
+<pre class="python fold-hide"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+
+# Write your program here.
+hub.speaker.play_sound(&#39;Hello&#39;)
+hub.speaker.play_sound(&#39;Hi&#39;)
+hub.speaker.play_sound(&#39;Ha Ha&#39;)</code></pre>
+<p>You might wonder how you’d get the name of the sound without first
+creating this program with word blocks. We can do this by looking on the
+manual page of ‘play_sound’. We access the manual by clicking the button
+on the right, then clicking ‘python’. This will bring up a manual for
+all the lego python commands. We have to scroll down until we see the
+title ‘Hub’ then click ‘Speaker’. After this you click ‘play_sound()’
+and it will bring up information about that command. A full list of the
+sounds is included on this page.</p>
+<p><br></p>
+<center>
+<p><img src="images/lego9.png" /></p>
+<p><img src="images/lego10.png" /></p>
+<p><img src="images/lego11.png" /></p>
+</center>
+<p><br></p>
+<p>The manual will contain information and example python code for
+nearly all of the word blocks so is useful for translating between the
+two.</p>
+<p><br><br></p>
+</div>
+<div id="play-a-tune" class="section level1">
+<h1>Play a tune</h1>
+<div id="word-blocks-1" class="section level2">
+<h2>Word blocks</h2>
+<p>We’re now going to create a short and simple tune using our LEGO word
+blocks. When we find the block ‘play beep’ and click on the tone it
+brings up a little keyboard for us to look at. Tone 60 actually
+corresponds to middle C on a piano.</p>
+<center>
+<p><img src="images/image10-1024x264.jpg" /></p>
+<p><img src="images/lego13.png" /></p>
+</center>
+<p><br></p>
+<p>As we go up or down in tone you can imagine we’re going up or down on
+a piano.</p>
+<p>We are now going to write a program that plays a simple tune for
+us:</p>
+<p><br></p>
+<center>
+<p><img src="images/lego12.png" /></p>
+</center>
+<p><br></p>
+<p>(It might sound faintly familiar - these are the first few notes of
+‘twinkle twinkle little star’!)</p>
+<p>If we wanted to we could make the tune repeat using the ‘repeat’ word
+block:</p>
+<p><br></p>
+<center>
+<p><img src="images/lego14.png" /></p>
+</center>
+<p><br></p>
+<p><b>Challenge: create a tune using the word blocks. Now make it repeat
+as many times as you like. </b></p>
+<p><br><br></p>
+</div>
+<div id="python-1" class="section level2">
+<h2>Python</h2>
+<p>Now let’s translate those above code blocks into python. We showed
+earlier how you can use the ‘hub.speaker.beep()’ function to play tones.
+The code to play our above word blocks would be:</p>
+<p><br></p>
+<center>
+<p><img src="images/lego15.png" /></p>
+</center>
+<pre class="python fold-hide"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+
+# Write your program here.
+hub.speaker.beep(60, 0.5)
+hub.speaker.beep(60, 0.5)
+hub.speaker.beep(67, 0.5)
+hub.speaker.beep(67, 0.5)
+hub.speaker.beep(69, 0.5)
+hub.speaker.beep(69, 0.5)
+hub.speaker.beep(67, 0.5)</code></pre>
+<p>We made our word block program more complicated by getting it to
+repeat three times. We could do that in python by pasting the code three
+times:</p>
+<pre class="python"><code># Write your program here.
+#1
+hub.speaker.beep(60, 0.5)
+hub.speaker.beep(60, 0.5)
+hub.speaker.beep(67, 0.5)
+hub.speaker.beep(67, 0.5)
+hub.speaker.beep(69, 0.5)
+hub.speaker.beep(69, 0.5)
+hub.speaker.beep(67, 0.5)
+
+#2
+hub.speaker.beep(60, 0.5)
+hub.speaker.beep(60, 0.5)
+hub.speaker.beep(67, 0.5)
+hub.speaker.beep(67, 0.5)
+hub.speaker.beep(69, 0.5)
+hub.speaker.beep(69, 0.5)
+hub.speaker.beep(67, 0.5)
+
+#3
+hub.speaker.beep(60, 0.5)
+hub.speaker.beep(60, 0.5)
+hub.speaker.beep(67, 0.5)
+hub.speaker.beep(67, 0.5)
+hub.speaker.beep(69, 0.5)
+hub.speaker.beep(69, 0.5)
+hub.speaker.beep(67, 0.5)</code></pre>
+<p><br></p>
+<p>But this requires a lot of typing/space to do so!</p>
+<p>In programming we can ‘loop’ through the same piece of code over and
+over again. In python we can use what is known as a <i>‘for loop’</i> to
+loop through something a set number of times, using the following
+format:</p>
+<pre class="python"><code>for i in range(NUMBER OF REPEATS):
+  code.you.want.to.repeat</code></pre>
+<p><br></p>
+<p>We provide python a range in the form of a number. Then the code we
+want to repeat. So for example, if we were to go back in replit and
+paste this code, we’d print ‘hello world!’ 4 times (you can try this if
+you want).</p>
+<pre class="python"><code>
+for i in range(4):
+  print(&quot;hello world!&quot;)</code></pre>
+<pre><code>## hello world!
+## hello world!
+## hello world!
+## hello world!</code></pre>
+<p><br></p>
+<p>Now let’s apply that to our LEGO robot program. Here we specify three
+loops…</p>
+<p><br></p>
+<center>
+<p><img src="images/lego16.png" /></p>
+</center>
+<pre class="python fold-hide"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+
+# Write your program here.
+for i in range(3):
+    hub.speaker.beep(60, 0.5)
+    hub.speaker.beep(60, 0.5)
+    hub.speaker.beep(67, 0.5)
+    hub.speaker.beep(67, 0.5)
+    hub.speaker.beep(69, 0.5)
+    hub.speaker.beep(69, 0.5)
+    hub.speaker.beep(67, 0.5)</code></pre>
+<p><br> The code now loops through our tune three times.</p>
+<p><b>Challenge: earlier you created your own tune. Can you recreate
+that tune in python? Can you loop it?</b></p>
+<p><br><br></p>
+<div id="bonus-activity" class="section level3">
+<h3>Bonus activity</h3>
+<p>Do you remember in the earlier <a href="activity2.html">poetry
+activity</a> we used the python package ‘time’ to cause a delay between
+the lines of our poem? I mentioned this can be useful in applications
+such as game development but we can also use that package to help us
+program our robot.</p>
+<p>An example of the code to do this is below:</p>
+<center>
+<p><img src="images/lego17.png" /></p>
+</center>
+<pre class="python fold-hide"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+import time
+
+# Create your objects here.
+hub = MSHub()
+
+# Write your program here.
+for i in range(3):
+    hub.speaker.beep(60, 0.5)
+    hub.speaker.beep(60, 0.5)
+    hub.speaker.beep(67, 0.5)
+    hub.speaker.beep(67, 0.5)
+    hub.speaker.beep(69, 0.5)
+    hub.speaker.beep(69, 0.5)
+    hub.speaker.beep(67, 0.5)
+    time.sleep(2) </code></pre>
+<p>We’ve made two notable changes to the code. On line 5 it now imports
+the package ‘time’ so we can use the <code>sleep</code> function. Then
+on line 19 we use <code>time.sleep(2)</code> to add a two second pause
+to our program.</p>
+<p>What this code does is:</p>
+<ul>
+<li><p>Import our packages (including time)</p></li>
+<li><p>Initialise the hub</p></li>
+<li><p>Begin a three replicate loop. Inside each loop it:</p>
+<ul>
+<li><p>Plays seven notes sequentially for 0.5 seconds using
+<code>hub.speaker.beep</code></p></li>
+<li><p>Pauses for two seconds using <code>time.sleep</code></p></li>
+</ul></li>
+<li><p>After the three loops the program is finished</p></li>
+</ul>
+<p>If you have time, why don’t you try modifying the length of the pause
+between the sounds? Can you include a pause in your earlier tune that
+you created?</p>
 <p><br> <br></p>
 <p><img src="images/logo.png" style="float: right;"/></p>
+</div>
 </div>
 </div>
 

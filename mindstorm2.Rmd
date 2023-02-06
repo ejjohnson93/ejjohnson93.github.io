@@ -119,7 +119,7 @@ This will bring up an interface that looks like this:
 
 <br>
 
-Rather than being entirely empty LEGO has already written some of the code for us. The first 4 lines import all the relevant packages we might need. Line 7 readies the hub.
+Rather than being entirely empty LEGO has already written some of the code for us. The first 4 lines import all the relevant packages we might need. Line 7 readies the hub by naming our hub object 'hub'. 
 
 <center>
 
@@ -152,6 +152,8 @@ with
 </center>
 
 <br>
+
+To explain this code, inside our 'hub' object there are lots of different extra functions to let us work with the lights, speakers, motors and sensors. Within 'hub' we find the 'light_matrix' and then within 'light_matrix' there is a function to 'write'. Each of these different components are separated by a full stop. This command broadly tells python to write a message of our choosing on the light matrix. 
 
 If you get stuck you can reveal the full code used by clicking the 'code' button to the right:
 
