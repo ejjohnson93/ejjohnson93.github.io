@@ -21,12 +21,18 @@ navbar:
       href: mindstorm3.html
     - text: Motors and movement
       href: mindstorm4.html
-  - text: Learning resources
+    - text: Colours and control
+      href: mindstorm5.html
+    - text: Challenges
+      href: mindstorm_challenges.html
+  - text: Micro:bit activities 
     menu:
-    - text: Set up python at home
-      href: blank.html
-    - text: Free teaching resources
-      href: blank.html
+    - text: Hello micro:bit!
+      href: microbit2.html
+    - text: Beating heart
+      href: microbit3.html
+    - text: Dice roller
+      href: microbit4.html
   - text: About us
     href: about.html
   right:

@@ -1,0 +1,58 @@
+---
+title: "Challenges!"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<br>
+
+We are now going to divide you into teams. Work as a team to complete the following challenges, don't worry if you don't manage them all. If you get stuck on one feel free to move onto another.
+
+I'd suggest first constructing the program using the word blocks, then converting it into python afterwards. [Motors and movement](mindstorm4.html) and [colours and control](mindstorm5.html) will likely contain examples of the code you need.
+
+<br><br>
+
+## Stop on the line
+
+Write a program that will start your robot moving, then stop if it passes over a red line.
+
+There are multiple ways to code this:
+
+-   The distance sensor has the `distance_sensor.wait_for_distance_closer_than()` function, the color sensor has an equivalent `color_sensor.wait_until_color()` function.
+
+-   You could also use a while loop with control statements.
+
+<br>
+
+## React to lines and obstacles 
+
+Write a program that will have your robot react as it crosses different coloured lines. I've placed down red, blue and black masking tape. Have each of these trigger something different, for example: a face on the light up matrix. (See python \> hub \> light matrix \> `hub.show_image()` ). Finally, have it stop if it approaches an obstacle.
+
+<br>
+
+## Escape a maze
+
+I've created a simple maze using masking tape. Can you write a program that uses motor commands to help the robot escape? If the robot crosses the lines it fails!
+
+<br>
+
+## Create your own program!
+
+Try and create your own program. Example ideas:
+
+-   Dancing robot
+
+-   Animation on the light matrix
+
+-   Play a song
+
+-   Make a noise and pull a face on the light matrix when it nearly collides with an obstacle
+
+-   Show a random number on the light matrix when the left or right button is pressed on the hub (you could expand on this to show the faces of a dice)
+
+<br>
+
+<img src="./images/logo.png" style="float: right;"/>

@@ -1,5 +1,5 @@
 ---
-title: "LEGO activity 3 - motors and movement"
+title: "LEGO activity 4 - colours and control"
 output: html_document
 ---
 
@@ -11,107 +11,109 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-So far we have just made use of the features included on the hub. In this activity we are going to introduce the distance sensor and motors on our robot.
-
-The motors and distance sensors look like this:
+In this activity we are going to introduce an additional sensor: the colour sensor.
 
 <center>
 
-![](images/motor.png){width="640"}
+![](images/colour.png){width="477"}
 
-![](images/LEGO_45604_SPIKE_5db0634679dbf.jpg){width="475"}
+![](images/colour2.png){width="473"}
 
 </center>
 
 <br>
 
-We will introduce the motors first and then the distance sensor later.
+The colour sensor projects a bright white light outwards, it then reads the colour and intensity of light reflected backwards. This can be used to differentiate between different colours but also between light and dark surfaces as light surfaces tend to reflect light back and dark surfaces tend to absorb it.
 
-The aims of this activity are:
+<br><br>
 
--   To program the motors to move our robot in straight lines and circles
-
--   To incorporate the distance sensor into our program and use it top stop movement
-
-<br> <br>
-
-# Straight lines and circles
+# Colour detector
 
 ## Word blocks
 
-To begin we will configure out motors and let our program know they are plugged into slots A & B of the hub. We tell our program these motors are paired so both can be controlled together.
+We are going to demonstrate the use of the colour sensor by creating a program that will detect when the sensor picks up a certain colour. In this case, blue! The program is below:
 
 <br>
 
 <center>
 
-![](images/lego20.png)
+![](images/lego27.png)
 
 </center>
 
 <br>
 
-After this, we can use one of two movement blocks to make it move forward. I recommend the second as it gives you more control over the direction.
+In the [speakers and sound](mindstorm3.html) and [motors and movement](mindstorm4.html) activities we demonstrated the use of <i>for loops</i> and <i>while loops</i> in python. The 'forever' block is the equivalent of a forever while loop. We then use a control block that adds a condition to our loop. What this does is:
 
-<br>
+-   *If* the light sensor detects blue, then set the center light button to blue
+
+-   *Else*, set the center light button to white
+
+The program loops through these conditions forever so it will evaluate if the sensor is still seeing blue each loop. A demonstration of the program working is below:
 
 <center>
 
-![](images/lego21.png)
+<br>
 
-![](images/lego22.png)
+![Featuring a very old childhood toy...](images/lego28.png)
 
 </center>
 
 <br>
 
-A simple program to make our robot move forward would be:
+<b>Challenge: can you modify the program so it responds to a different colour instead? For example, red or green? Can you modify the program so it will respond to multiple colours? (Two or more.)</b>
 
 <br>
 
+Modifying the above program to respond to multiple colours can be surprisingly tricky. We either need to use event blocks or nested control blocks. You can see an example by clicking the button below:
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName">
+
+Show/Hide
+
+</button>
+
+::: {#BlockName .collapse}
 <center>
 
-![](images/lego23.png)
+![](images/lego29.png)
 
 </center>
+:::
 
 <br>
 
-To make the robot move backwards we could instead use:
+But we can actually make this much more simple. Click 'show/hide' to reveal the program:
 
-<br>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName2">
 
+Show/Hide
+
+</button>
+
+::: {#BlockName2 .collapse}
 <center>
 
-![](images/lego24.png)
+![](images/lego30.png)
 
 </center>
+:::
 
 <br>
 
-<b>Challenge:
-
--   Try to move the robot forward whilst turning left.
-
--   Try and make the robot spin in a circle. There are multiple ways to do this with word blocks. </b>
+This program once again loops forever. But we simplify it by telling it to set the center light button to whatever colour the colour sensor is currently sensing. Try it yourself and see it in action.
 
 <br><br>
 
 ## Python
 
-As before, we're going to translate our program into python. There is a notable change on line 8 where we add `movement_motors = MotorPair("A", "B").`
-
-This is equivalent to the 'set movement motors' word block from earlier. It creates a motor pair and then allows us to use the movement functions.
-
-Then on line 11 we can then use the 'move' function contained inside our motor pair. Move takes four arguments, a number, a unit, the steering and the speed. The number is used in combination with the unit and will determine how much the motors spin. Negative values make them spin backwards. The unit can be 'cm', 'in', 'rotations' or 'degrees'. Steering determines the direction, negative values make the robot turn left and positive values make the robot turn right. A final optional argument is speed, this determines how fast or slow the robot goes and can be between -100 and 100.
-
-As in the previous activity we could consult the python help manual if we wanted more information!
+Let's convert the above program into python code. We'll start with the simple version that only responds to blue:
 
 <br>
 
 <center>
 
-![](images/lego26.png)
+![](images/lego31.png)
 
 </center>
 
@@ -124,189 +126,111 @@ import math
 
 # Create your objects here.
 hub = MSHub()
-movement_motors = MotorPair("A", "B")
+color_sensor = ColorSensor('E')
 
 # Write your program here.
-movement_motors.move(10, 'cm', steering = 0)
-
-
-```
-
-Challenge:
-
--   Make the robot move forwards or backwards using python!
-
--   Experiment with different units, steering and speed. How do they compare?
-
--   Can you make the robot spin in a circle?
-
-<br><br>
-
-# Distance sensor
-
-## Word blocks
-
-In our previous example we were just running our robot for set distances. But what if we want our robot to be able to respond to problems it encounters and <i>react</i> to them. To do this we can make use of the distance sensor on the front of the robot. The distance sensor uses ultrasonic signalling to determine how far away objects are. This is like the echolocation animals and submarines use:
-
-<br>
-
-<center>
-
-[![Credit: BBC Science Focus](images/echolocation.png)](https://www.sciencefocus.com/nature/how-does-echolocation-work/)
-
-</center>
-
-<br>
-
-We are going to create a program that makes our robot:
-
--   Start moving continuously in a straight line
-
--   Wait until the distance sensor detects an object/obstacle closer than 10 cm
-
--   Stop moving
-
-The program is below:
-
-<br>
-
-<center>
-
-![](images/lego18.png)
-
-</center>
-
-<br>
-
-You can see in the program we set the motors as port A & B. The distance sensor is plugged into port D and we need to make sure to select that. We use the 'control' block 'wait until' to add the condition, then scroll down to the sensors to find the condition.
-
-<br><br>
-
-## Python
-
-Once again we are going to translate our code into python. Hopefully you're beginning to get a sense of how the word blocks are converted into python code.
-
-In the previous section we added a line to our python code that let us use the motor functions. Now there is an additional command (line 9) to let us access the distance sensor functions.
-
-Lines 12-14 then contain our program. It follows the same basic steps as the word blocks above. The distance sensor object contains the function `wait_for_distance_closer_than()` which we pass a number and unit to. After the distance sensor registers something closer than 10 cm it then moves onto the next line and stops the motors.
-
-<br>
-
-<center>
-
-![](images/lego19.png)
-
-</center>
-
-```{python, eval=FALSE, class.source = 'fold-hide'}
-
-from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
-from mindstorms.control import wait_for_seconds, wait_until, Timer
-from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
-import math
-
-# Create your objects here.
-hub = MSHub()
-movement_motors = MotorPair("A", "B")
-distance_sensor = DistanceSensor("D")
-
-# Write your program here
-movement_motors.start()
-distance_sensor.wait_for_distance_closer_than(10, "cm")
-movement_motors.stop()
-
-
-
-```
-
-<br>
-
-<b>Challenge: can you create a program that makes the robot move backwards when the distance sensor is covered by an obstacle (e.g. your hand)? You can first try constructing this using the word blocks. </b>
-
-If you get stuck the code is below (click the 'code' button to reveal):
-
-```{python, eval=FALSE, class.source = 'fold-hide'}
-
-from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
-from mindstorms.control import wait_for_seconds, wait_until, Timer
-from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
-import math
-
-# Create your objects here.
-hub = MSHub()
-movement_motors = MotorPair("A", "B")
-distance_sensor = DistanceSensor("D")
-
-# Write your program here
-distance_sensor.wait_for_distance_closer_than(10, "cm")
-# Speed was set to 40 so the backwards movement isn't too jumpy
-movement_motors.move(-10, 'cm', steering = 0, speed = 40)
-
-
-```
-
-<br>
-
-A problem you might have encountered when trying to program this, and in the above code, is that it only triggers once. You put your hand in front for example, the robot moves backwards, then it doesn't do anything again. This is because it has reached the end of the program and won't cycle back through the code.
-
-In the [speakers and sound](mindstorm3.html) activity we used a <i>for loop</i> to loop through out code a set number of times. We could apply this idea to our program (click the 'code' button to reveal):
-
-```{python, eval=FALSE, class.source = 'fold-hide'}
-
-from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
-from mindstorms.control import wait_for_seconds, wait_until, Timer
-from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
-import math
-
-# Create your objects here.
-hub = MSHub()
-movement_motors = MotorPair("A", "B")
-distance_sensor = DistanceSensor("D")
-
-# Write your program here
-for i in range(3):
-    distance_sensor.wait_for_distance_closer_than(10, "cm")
-    movement_motors.move(-10, 'cm', steering = 0, speed = 40)
-
-```
-
-
-<br>
-
-This means our program will loop three times, meaning waits for the distance sensor to be triggered three times. But this still has the problem of only working a limited number of times and then stopping. What if we want our robot to respond whenever the trigger occurs? We can use another type of loop called a <i>'while loop'</i> to do so. We are going to create a while loop that loops forever, meaning the program will trigger every time the distance sensor detects something closer them 10 cm. Try the code below and see what happens (click the 'code' button to reveal):
-
-```{python, eval=FALSE, class.source = 'fold-hide'}
-
-from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
-from mindstorms.control import wait_for_seconds, wait_until, Timer
-from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
-import math
-
-# Create your objects here.
-hub = MSHub()
-movement_motors = MotorPair("A", "B")
-distance_sensor = DistanceSensor("D")
-
-# Write your program here
 while True:
-    distance_sensor.wait_for_distance_closer_than(10, "cm")
-    movement_motors.move(-10, 'cm', steering = 0, speed = 40)
+    if color_sensor.get_color() == 'blue':
+        hub.status_light.on('blue')
+    else:
+        hub.status_light.off()
+
 
 ```
 
-This is the equivalent of using the 'forever' word block. Don't worry if this seems quite complex and confusing, these are difficult concepts that would normally take weeks or months of study to fully wrap your head around. The idea here is just to showcase what is possible with python.
+<br>
+
+We begin using similar steps to the previous exercise. We first create a 'color_sensor' object that allows us to access functions inside the colour sensor (plugged into slot 'E').
+
+Then we begin our program.
+
+We first start a forever while loop. This will keep looping infinitely as long as the program is running. Whilst that while loop is running we pass it two conditions to keep evaluating:
+
+-   *If* the light sensor detects blue, then set the center light button to blue
+
+-   *Else*, turn off the center light button
+
+We make use of three functions here: `color_sensor.get_color()`, `hub.status_light.on()`, and `hub.status_light.off()`.
+
+<br>
+
+In the word block section we improved our program in two steps. We'll first add a second colour to our code. When we used the word blocks we had to use nested control blocks. Here we can use a new control statement *'elif'* which is short for 'else if'. You can have multiple 'elif' statements between your 'if' and 'else' ones.
+
+<center>
+
+![](images/lego33.png)
+
+</center>
+
+```{python, eval=FALSE, class.source = 'fold-hide'}
+
+from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+color_sensor = ColorSensor('E')
+
+# Write your program here.
+while True:
+    if color_sensor.get_color() == 'blue':
+        hub.status_light.on('blue')
+    elif color_sensor.get_color() == 'red':
+        hub.status_light.on('red')
+    else:
+        hub.status_light.off()
+
+```
+
+<br>
+
+Our next step was to simplify the program and get the center light to change to any colour the sensor can detect. When we translate this to python it looks like this:
+
+<center>
+
+![](images/lego32.png)
+
+</center>
+
+```{python, eval=FALSE, class.source = 'fold-hide'}
+
+from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+color_sensor = ColorSensor('E')
+
+# Write your program here.
+while True:
+    color = color_sensor.get_color()
+    if color == None:
+        hub.status_light.off()
+    else:
+        hub.status_light.on(color)
+
+
+```
+
+<br>
+
+This solution isn't as short or punchy as our word block one. This is because when we use the function `color_sensor.get_color()` it can sometimes return None. This is when the sensor isn't able to detect anything (for example when you're holding it up in the air). If we tried to pass None to `hub.status_light.on()` it would cause an error. So we first evaluate if the sensor can detect a colour. If it can't (i.e. if the color is None) it turns the status light off. If it can detect a colour (i.e. the colour ISN'T None), it changes the status light colour to whatever the sensor detected.
 
 <br><br>
 
 # Summary
 
-In this activity we have learned how to:
+In this activity we:
 
--   Move our robot
+-   Learned how to use the colour sensor
 
--   Get it to respond interactively to obstacles using the distance sensor
+-   Expanded on the idea of *'while loops'* and introduced control statements to them
 
--   Expanded on <i>for loops</i> and introduced the idea of <i>while loops</i>.
+Loops and control statements might be difficult concepts to wrap your head around - don't worry these are quite advanced! But this showcases techniques that are widely used not just in robotics but programming in general.
 
 <br>
 

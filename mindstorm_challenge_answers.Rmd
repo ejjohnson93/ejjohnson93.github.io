@@ -1,0 +1,111 @@
+---
+title: "LEGO activity - answers"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<br>
+
+# Answers
+
+## Stop on the line
+
+V1 - wait until function
+
+```{python, eval=FALSE}
+
+from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+movement_motors = MotorPair("A", "B")
+distance_sensor = DistanceSensor("D")
+color_sensor = ColorSensor('E')
+
+# Write your program here
+# Slow robot down 
+movement_motors.set_default_speed(30)
+
+movement_motors.start()
+color_sensor.wait_until_color('red')
+movement_motors.stop()
+
+```
+
+
+V2 - while loop with control
+
+```{python, eval=FALSE}
+
+from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+movement_motors = MotorPair("A", "B")
+distance_sensor = DistanceSensor("D")
+color_sensor = ColorSensor('E')
+
+# Write your program here
+# Slow robot down 
+movement_motors.set_default_speed(30)
+
+movement_motors.start()
+
+while True:
+    if color_sensor.get_color() == 'red':
+        movement_motors.stop()
+    else:
+        pass
+```
+
+
+
+## Escape the box 
+
+
+```{python, eval=FALSE}
+
+from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+import random
+
+# Create your objects here.
+hub = MSHub()
+movement_motors = MotorPair("A", "B")
+distance_sensor = DistanceSensor("D")
+color_sensor = ColorSensor('E')
+
+# Write your program here
+# Slow robot down
+movement_motors.set_default_speed(30)
+
+movement_motors.start()
+
+while True:
+    if color_sensor.get_color() == 'red':
+        movement_motors.move(-7, 'cm', steering = 0, speed = 40)
+        movement_motors.move_tank(random.randint(20, 60), 'degrees', 40, 0)
+        movement_motors.start()
+    else:
+        pass
+      
+```
+
+
+
+
+
+<br>
+
+<img src="./images/logo.png" style="float: right;"/>

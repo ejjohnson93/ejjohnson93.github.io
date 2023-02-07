@@ -1,14 +1,40 @@
 ---
-title: "Welcome!"
+title: ""
 output: html_document
 ---
-
-WIP: going to add parallax scrolling: https://github.com/holtzy/R-Markdown-Parallax
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# 
+<br><br>
+
+# Welcome!
+
+This website contains introductory Python activities developed by the University of Liverpool's Computational Biology Facility. These activities are designed to be a taster rather than a comprehensive course.
+
+If you stumble across this website by chance and would like to reach out to us to run these activities in your school (based in the North West of England) please get in contact using the details on our about page. If you are not based in the North West of England and would like to adapt these materials for your own use please get in touch.
+
+<br><br>
+
+# Why learn python?
+
+fluff/padding goes here...
+
+<br><br>
+
+# Funders
+
+These activities were created as part of a Wellcome Trust grant to support public outreach and engagement.
+
+<br>
+
+<center>
+
+![](images/Bildschirmfoto-2016-12-02-um-11.25.41.png){width="215"}
+
+</center>
+
+<br>
 
 <img src="./images/logo.png" style="float: right;"/>

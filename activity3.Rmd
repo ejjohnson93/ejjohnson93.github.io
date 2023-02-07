@@ -588,7 +588,7 @@ In these activities we have used Python to visualise data. In the first activity
 
 Effectively communicating information via data visualisation is a hugely important skill in the 21st century in many fields. Health care professionals and scientists especially need to know how to communicate effectively with the public to convey their findings.
 
-Learning how to interpret charts and graphs is just as important. People can use graphics to intentionally mislead people and make the data say what they want it to say. For example, take a look at this graph produced by St. Louis Fed (USA) below:
+Learning how to interpret charts and graphs is just as important. People can use graphics to accidentally or intentionally mislead people and make the data appear to say something different. For example, take a look at this graph produced by St. Louis Fed (USA) below:
 
 <br>
 
@@ -600,7 +600,7 @@ Learning how to interpret charts and graphs is just as important. People can use
 
 <br>
 
-At a glance this graph would appear to suggest China has dramatically higher spending than all the other countries in 2020. But if we read the figure legend carefully we can see that there are two y-axes for the data. China, Russia, the UK, India and Saudi Arabia are all plotted on the left axis. The USA alone is plotted on the right axis. In reality the USA spent nearly \$800 billion on its military, whereas China only spent \~\$250 billion. This is an example of propaganda, to make China's military spending appear more threatening. Whilst the data plotted is technically correct the way it was visualised is very (intentionally!) misleading. Take a look at this other visualisation that conveys nearly the same information:
+At a glance this graph would appear to suggest China has dramatically higher spending than all the other countries in 2020. But if we read the figure legend carefully we can see that there are two y-axes for the data. China, Russia, the UK, India and Saudi Arabia are all plotted on the left axis. The USA alone is plotted on the right axis. In reality the USA spent nearly \$800 billion on its military, whereas China only spent \~\$250 billion. Whilst the data plotted is technically correct the way it was visualised is very misleading. Take a look at this other visualisation that conveys nearly the same information:
 
 <br>
 
@@ -612,7 +612,7 @@ At a glance this graph would appear to suggest China has dramatically higher spe
 
 <br>
 
-Here, the creators used a bar chart alongside a stacked bar chart to show the proportions of military spending. Though the time dimension was lost, this graphic is a lot more truthful and a lot more effective!
+Here, the creators used a bar chart alongside a stacked bar chart to show the proportions of military spending. Though the time dimension was lost, this graphic is a lot more truthful and a lot more effective! St. Louis Fed (USA) later issued an apology and clarification for the misleading nature of their original graphic.
 
 Misleading data visualisation techniques were used frequently throughout the COVID-19 pandemic to spread misinformation. By creating our own data visualisations we can hopefully gain a greater understanding of how they are used and misused in media, and critically engage with the ones we see in the news.
 
