@@ -1,6 +1,6 @@
 # CBF programming activities 
 
-## Producting the website
+## Producing the website
 
 In the folder the contains all the .Rmd files, run: 
 
