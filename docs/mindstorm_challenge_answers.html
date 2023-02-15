@@ -11,7 +11,7 @@
 
 
 
-<title>index.knit</title>
+<title>LEGO activity - answers</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -435,24 +435,89 @@ div.tocify {
 
 
 
+<h1 class="title toc-ignore">LEGO activity - answers</h1>
 
 </div>
 
 
-<p><br><br></p>
-<div id="welcome" class="section level1">
-<h1>Welcome!</h1>
-<p>This website contains introductory Python activities developed by the
-University of Liverpool’s Computational Biology Facility. These
-activities are designed to be a programming taster rather than a
-comprehensive course.</p>
-<p>If you stumble across this website by chance and would like to reach
-out to us to run these activities in your school (based in the North
-West of England) please get in contact using the details on our about
-page. If you are not based in the North West of England and would like
-to adapt these materials for your own use please get in touch.</p>
+<p><br></p>
+<div id="answers" class="section level1">
+<h1>Answers</h1>
+<div id="stop-on-the-line" class="section level2">
+<h2>Stop on the line</h2>
+<p>V1 - wait until function</p>
+<pre class="python"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+movement_motors = MotorPair(&quot;A&quot;, &quot;B&quot;)
+distance_sensor = DistanceSensor(&quot;D&quot;)
+color_sensor = ColorSensor(&#39;E&#39;)
+
+# Write your program here
+# Slow robot down 
+movement_motors.set_default_speed(30)
+
+movement_motors.start()
+color_sensor.wait_until_color(&#39;red&#39;)
+movement_motors.stop()</code></pre>
+<p>V2 - while loop with control</p>
+<pre class="python"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+
+# Create your objects here.
+hub = MSHub()
+movement_motors = MotorPair(&quot;A&quot;, &quot;B&quot;)
+distance_sensor = DistanceSensor(&quot;D&quot;)
+color_sensor = ColorSensor(&#39;E&#39;)
+
+# Write your program here
+# Slow robot down 
+movement_motors.set_default_speed(30)
+
+movement_motors.start()
+
+while True:
+    if color_sensor.get_color() == &#39;red&#39;:
+        movement_motors.stop()
+    else:
+        pass</code></pre>
+</div>
+<div id="escape-the-box" class="section level2">
+<h2>Escape the box</h2>
+<pre class="python"><code>from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor, App
+from mindstorms.control import wait_for_seconds, wait_until, Timer
+from mindstorms.operator import greater_than, greater_than_or_equal_to, less_than, less_than_or_equal_to, equal_to, not_equal_to
+import math
+import random
+
+# Create your objects here.
+hub = MSHub()
+movement_motors = MotorPair(&quot;A&quot;, &quot;B&quot;)
+distance_sensor = DistanceSensor(&quot;D&quot;)
+color_sensor = ColorSensor(&#39;E&#39;)
+
+# Write your program here
+# Slow robot down
+movement_motors.set_default_speed(30)
+
+movement_motors.start()
+
+while True:
+    if color_sensor.get_color() == &#39;red&#39;:
+        movement_motors.move(-7, &#39;cm&#39;, steering = 0, speed = 40)
+        movement_motors.move_tank(random.randint(20, 60), &#39;degrees&#39;, 40, 0)
+        movement_motors.start()
+    else:
+        pass</code></pre>
 <p><br></p>
 <p><img src="images/logo.png" style="float: right;"/></p>
+</div>
 </div>
 
 

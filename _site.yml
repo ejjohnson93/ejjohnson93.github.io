@@ -33,14 +33,19 @@ navbar:
       href: microbit3.html
     - text: Dice roller
       href: microbit4.html
+    - text: Extra challenges
+      href: microbit_extrachallenges.html
   - text: About us
     href: about.html
   right:
   - icon: fab fa-twitter
     href: https://twitter.com/LivUniCBF
+  - icon: fas fa-globe
+    text: Website
+    href: https://www.liverpool.ac.uk/computational-biology-facility/
   - icon: fab fa-github
     text: Source code
-    href: https://github.com/CBFLivUni/testing
+    href: https://github.com/ejjohnson93/ejjohnson93.github.io
 output:
   html_document:
     toc: yes

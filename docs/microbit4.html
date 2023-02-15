@@ -388,6 +388,9 @@ div.tocify {
     <li>
       <a href="microbit4.html">Dice roller</a>
     </li>
+    <li>
+      <a href="microbit_extrachallenges.html">Extra challenges</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -402,7 +405,14 @@ div.tocify {
   </a>
 </li>
 <li>
-  <a href="https://github.com/CBFLivUni/testing">
+  <a href="https://www.liverpool.ac.uk/computational-biology-facility/">
+    <span class="fas fa-globe"></span>
+     
+    Website
+  </a>
+</li>
+<li>
+  <a href="https://github.com/ejjohnson93/ejjohnson93.github.io">
     <span class="fab fa-github"></span>
      
     Source code
@@ -450,38 +460,219 @@ then improve it by making the display look like the pips on a dice.</p>
 editor</a>. The program is below:</p>
 <p><br></p>
 <center>
-<p><img src="images/microbit11.png" /></p>
+<p><img src="images/microbit13.png" /></p>
 </center>
 <p><br></p>
-<p>text text</p>
+<p>Our micro:bit contains an accelerometer which means it can detect
+movement. In this program when the micro:bit is shaken it activates the
+‘when shaken’ block. Inside that block is the ‘show number’ block.</p>
+<p>To make it show a random number we have to scroll down to the ‘math’
+section of blocks and then drag the ‘pick random’ block inside where the
+number would be. We can select any range we like for the numbers but
+since we are trying to emulate a 6 sided dice we say 1-6.</p>
+<p>When you run this program it may be easier to then unplug the
+micro:bit from the laptop and connect the battery pack as so to make the
+micro:bit easier to shake:</p>
+<p><br></p>
+<center>
+<p><img src="images/microbit14.png" /></p>
+</center>
 <p><br><br></p>
+<div id="improve-it" class="section level3">
+<h3>Improve it!</h3>
+<p>Whilst some 6-sided dice display numerals on each face, most instead
+show pips:</p>
+<p><br></p>
+<center>
+<p><img
+src="images/Dice-utilized-in-this-study-Clockwise-from-top-left-Large-Symboled-Die-Large-Numeral.jpg" /></p>
+</center>
+<p><br></p>
+<p>We are now going to modify our program so it shows pips instead.</p>
+<p>Like before the accelerometer detects when the micro:bit has been
+shaken. It then generates a random number. Instead of displaying that
+number on screen it saves the number inside a ‘variable’ and passes the
+variable to a big ‘else if’ block. Inside that block the number is
+evaluated, essentially saying ‘if the number is x, show x, otherwise if
+the number is y show y, otherwise…..’.</p>
+<p>The full program is further below. But to begin, we need to create a
+variable for ‘number’. We do so by clicking on ‘variables’, then ‘make a
+variable’:</p>
+<p><br></p>
+<center>
+<p><img src="images/microbit15.png" /></p>
+<p><img src="images/microbit16.png" /></p>
+<p><img src="images/microbit17.png" /></p>
+</center>
+<p><br></p>
+<p>This then gives you some new blocks to work with. We can drag the
+‘pick random’ block inside the ‘set number’ block as we did earlier for
+the ‘show number’ block.</p>
+<p>We then build up program using the logic blocks. We can find the
+blocks we need under ‘conditionals’ and ‘comparison’:</p>
+<p><br></p>
+<center>
+<p><img src="images/microbit19.png" /></p>
+<p><img src="images/microbit18.png" /></p>
+</center>
+<p><br></p>
+<p>Here is the final program:</p>
+<p><br></p>
+<center>
+<p><img src="images/microbit20.png" width="417" /></p>
+</center>
+<p><br></p>
+<p><b>Challenge:</p>
+<ul>
+<li><p>Can you make the display clear after a few seconds to save
+battery?</p></li>
+<li><p>Can you make your dice display different numbers? Can you think
+of a way to represent numbers greater than 6 with pips? (Or some other
+notation?)</b></p></li>
+</ul>
+<p><br><br></p>
+</div>
 </div>
 <div id="python" class="section level2">
 <h2>Python</h2>
-<p>Open the <a href="https://python.microbit.org/v/3">Python
-editor</a>.</p>
+<p>Now let’s convert our program into python! Open the <a
+href="https://python.microbit.org/v/3">Python editor</a>.</p>
+<p>This program will have the same outcome as the one above and works
+off the same logic. We need to import a python package ‘random’ to let
+us use random numbers though. The program is below:</p>
 <p><br></p>
 <center>
-<p><img src="images/microbit10.png" /></p>
+<p><img src="images/microbit21.png" /></p>
 </center>
 <pre class="python fold-hide"><code>from microbit import *
+import random
 
 while True:
-    display.show(Image.HEART)
-    sleep(500)
-    display.show(Image.HEART_SMALL)
-    sleep(500)</code></pre>
+    if accelerometer.was_gesture(&#39;shake&#39;):
+        display.show(random.randint(1, 6))</code></pre>
 <p><br></p>
+<p>By now you’ll hopefully be more familiar with the idea of using
+forever while loops to keep a program repeating. Inside the while loop
+we use a condition that asks whether the accelerometer detected shaking
+(line 5).</p>
+<p>If the accelerometer detected shaking it then moves onto line 6. This
+uses the <code>display.show()</code> function to display something on
+screen. Inside the brackets we say what we want to display (be it a
+number or phrase or something else). In this case we use the
+<code>randint()</code> function inside ‘random’ to generate a random
+number between 1 and 6.</p>
+<p>If you were to run the following inside replit for example:</p>
+<pre class="python"><code>
+import random
+
+print(random.randint(1,6))</code></pre>
+<pre><code>## 5</code></pre>
+<p>You would see the output of <code>random.randint(1,6)</code> is just
+a number between 1 and 6. If our random number was 4 we’d essentially be
+running:</p>
+<p><code>display.show(4)</code>.</p>
+<p>So the code essentially substitutes a random number between 1 and 6
+inside <code>display.show()</code> each time we shake the micro:bit.</p>
 <p><br><br></p>
+<div id="improve-it-1" class="section level3">
+<h3>Improve it!</h3>
+<p>Next, let’s create the version with pips instead of numerals as we
+did in the MakeCode editor above. The full program is below. It is a bit
+too long to display on one screen so we have cropped it but included the
+code in a box below it.</p>
+<p><br></p>
+<center>
+<p><img src="images/microbit22.png" /></p>
+</center>
+<pre class="python fold-hide"><code>from microbit import *
+import random
+
+while True:
+    if accelerometer.was_gesture(&#39;shake&#39;):
+        number = random.randint(1, 6)
+        if number == 1:
+            display.show(Image(
+            &quot;00000:&quot;
+            &quot;00000:&quot;
+            &quot;00900:&quot;
+            &quot;00000:&quot;
+            &quot;00000&quot;))
+        elif number == 2:
+            display.show(Image(
+            &quot;00000:&quot;
+            &quot;00000:&quot;
+            &quot;90009:&quot;
+            &quot;00000:&quot;
+            &quot;00000&quot;))
+        elif number == 3:
+            display.show(Image(
+            &quot;00009:&quot;
+            &quot;00000:&quot;
+            &quot;00900:&quot;
+            &quot;00000:&quot;
+            &quot;90000&quot;))
+        elif number == 4:
+            display.show(Image(
+            &quot;90009:&quot;
+            &quot;00000:&quot;
+            &quot;00000:&quot;
+            &quot;00000:&quot;
+            &quot;90009&quot;))
+        elif number == 5:
+            display.show(Image(
+            &quot;90009:&quot;
+            &quot;00000:&quot;
+            &quot;00900:&quot;
+            &quot;00000:&quot;
+            &quot;90009&quot;))
+        else:
+            display.show(Image(
+            &quot;90009:&quot;
+            &quot;00000:&quot;
+            &quot;90009:&quot;
+            &quot;00000:&quot;
+            &quot;90009&quot;))</code></pre>
+<p><br></p>
+<p>This code starts off the same as the more simple version above. Then
+on line 6 it instead generates and saves the random number inside a
+variable called number. This is essentially the same as the ‘set number
+to pick random between 1 and 6’ block we used in the MakeCode editor
+above.</p>
+<p>Then, on line 7, an elseif loop begins. Can you see that is nearly
+the same as our logic conditional block from earlier? It follows the
+same process of asking ‘is the random number x, if so display this, is
+the random number y, if so display this…’.</p>
+<p>The below code would show the dice face with 1 pip:</p>
+<pre><code>display.show(Image(
+
+            &quot;00000:&quot;
+
+            &quot;00000:&quot;
+
+            &quot;00900:&quot;
+
+            &quot;00000:&quot;
+
+            &quot;00000&quot;))
+            </code></pre>
+<p>We learned about creating images in the <a
+href="microbit3.html">previous activity</a> if you’re unsure how this
+works. But essentially on the 5x5 light up screen the 0 mean don’t light
+up, and the 9 means the brightest light setting.</p>
+<p><b>Challenge: try and play with the brightness levels of the pips on
+your dice. Try and create a dice that goes past 6. </b></p>
+<p><br><br></p>
+</div>
 </div>
 </div>
 <div id="summary" class="section level1">
 <h1>Summary</h1>
 <p>In this activity we have:</p>
 <ul>
-<li><p>Used the light matrix to create images</p></li>
-<li><p>Used <em>forever</em> code blocks and <em>while loops</em> to
-create looping animations</p></li>
+<li><p>Used the light matrix to create numbers and images</p></li>
+<li><p>Made use of the accelerometer</p></li>
+<li><p>Used more complicated while loops in combination with elseif
+loops</p></li>
 </ul>
 <p><br> <br></p>
 <p><img src="images/logo.png" style="float: right;"/></p>
