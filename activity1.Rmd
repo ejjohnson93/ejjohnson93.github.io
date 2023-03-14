@@ -13,11 +13,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Computers speak their own language known as 'machine code'. To humans this language is completely unreadable, so we needed to create something we could use to speak to computers. You can think of programming as a language that we use to talk to and be understood by computer. For comparison, imagine a situation where you speak English as your first language and French as your second. You meet someone who speaks German as their first language and French as their second, so you both have to communicate in French to understand each other!
 
-<br>
-There are many programming languages, with different strengths and weaknesses. Like all languages you need to know the vocabulary and grammar, which can seem quite overwhelming at first. However, as you learn to program you develop your vocabulary problem solving skills. These problem solving skills are broadly applicable across all programming languages, so after learning one language you can learn a second much more easily!
+<br> There are many programming languages, with different strengths and weaknesses. Like all languages you need to know the vocabulary and grammar, which can seem quite overwhelming at first. However, as you learn to program you develop your vocabulary problem solving skills. These problem solving skills are broadly applicable across all programming languages, so after learning one language you can learn a second much more easily!
 
 These activities are designed to give you a first introduction to a programming language. We have selected python for you to learn as the 'code' (i.e. the vocabulary) was designed to be easier for humans to read and write. However, there is nothing stopping you from using the skills you've gained to learn a new programming language later on.
-
 
 <br>
 
@@ -90,8 +88,7 @@ Challenge: can you make the program print out something else? Anything you like.
 
 # Interactive inputs
 
-Normally, we don't want our programs just to print out text. Some programs might expect user interaction. 
-Next, we are going to write a program the prompts a user for an input, in this case your name. It stores the name in the variable 'name' and then prints the name out.
+Normally, we don't want our programs just to print out text. Some programs might expect user interaction. Next, we are going to write a program the prompts a user for an input, in this case your name. It stores the name in the variable 'name' and then prints the name out.
 
 ```{python, eval=FALSE}
 
@@ -128,14 +125,10 @@ print("Hello, your name is ", name1, " and my name is ", name2)
 
 Challenge: can you create a program that takes <b>three</b> inputs and then prints out a statement that includes all three inputs?
 
-<br>
-<br>
+<br> <br>
 
 # Conclusions
 
 We have wrote our first python programs using replit - well done!
-
-
-
 
 <img src="./images/logo.png" style="float: right;"/>

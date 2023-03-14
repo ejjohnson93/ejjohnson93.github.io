@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Activity 4 - Choose your own adventure (BETA)</title>
+
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CBF</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Activities
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="activity1.html">Activity 1 - introduction</a>
+    </li>
+    <li>
+      <a href="activity2.html">Activity 2 - python poem</a>
+    </li>
+    <li>
+      <a href="activity3.html">Activity 3 - data analysis</a>
+    </li>
+    <li>
+      <a href="activity4.html">Activity 4 - choose your own adventure game</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Robot activities
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="mindstorm2.html">Hello LEGO!</a>
+    </li>
+    <li>
+      <a href="mindstorm3.html">speakers and sound</a>
+    </li>
+    <li>
+      <a href="mindstorm4.html">Motors and movement</a>
+    </li>
+    <li>
+      <a href="mindstorm5.html">Colours and control</a>
+    </li>
+    <li>
+      <a href="mindstorm_challenges.html">Challenges</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Micro:bit activities
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="microbit2.html">Hello micro:bit!</a>
+    </li>
+    <li>
+      <a href="microbit3.html">Beating heart</a>
+    </li>
+    <li>
+      <a href="microbit4.html">Dice roller</a>
+    </li>
+    <li>
+      <a href="microbit_extrachallenges.html">Extra challenges</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="about.html">About us</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://twitter.com/LivUniCBF">
+    <span class="fab fa-twitter"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.liverpool.ac.uk/computational-biology-facility/">
+    <span class="fas fa-globe"></span>
+     
+    Website
+  </a>
+</li>
+<li>
+  <a href="https://github.com/ejjohnson93/ejjohnson93.github.io">
+    <span class="fab fa-github"></span>
+     
+    Source code
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Activity 4 - Choose your own adventure
+(BETA)</h1>
+
+</div>
+
+
+<p><br></p>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>‘Choose Your Own Adventure’ books were extremely popular in the 1980s
+and 1990s. They were written in second person and presented the reader
+with a series of branching choices. After each section the reader would
+be prompted with a decision, followed by a ‘turn to page x’ or ‘turn to
+page y’. Depending on what choices the reader made they might get a good
+ending or a bad ending (or a neutral one).</p>
+<p><br></p>
+<center>
+<p><img src="images/cyoa.png" /></p>
+</center>
+<p><br></p>
+<p><a
+href="https://www.atlasobscura.com/articles/cyoa-choose-your-own-adventure-maps">This
+web page</a> demonstrates the branching structure of some Choose Your
+Own Adventure books that were popular at the time. They would be in a
+variety genre but it was common to get Dungeons and Dragons-esque
+fantasy adventures (think Stranger Things!).</p>
+<p><br></p>
+<center>
+<p><img src="images/eb31bd7053eca093bc_Silk%20King%20Map-1.jpg" /></p>
+</center>
+<p>These books would go on to influence a generation of narrative video
+games including <em>Until Dawn</em>, <em>The Walking Dead Game</em>,
+<em>Heavy Rain</em>, <em>Creatures Such as We, Monster Prom,
+Oxenfree</em>, <em>Divinity Original Sin</em> and many more….</p>
+<p><br></p>
+<center>
+<p><img src="images/monster_prom.png" /></p>
+</center>
+<p><br></p>
+<p>In this activity we are going to create our own Choose Your Own
+Adventure game coded in Python.</p>
+<p><br> <br></p>
+</div>
+<div id="lets-play" class="section level1">
+<h1>Let’s play!</h1>
+<p>Our previous activities have introduced us to the <code>print</code>
+function and the <code>sleep</code> function. We are going to make use
+of both of these here. In addition to this, <strong>we are going to
+create our own functions</strong>. This might sound quite daunting but
+we will break the process down into steps.</p>
+<p><a href="activity3.html">Activity 3</a> makes use of Jupyter
+notebooks. This activity makes use of replit once again. Let’s begin by
+creating a new repl, we might call it ‘CBF game’, but you can use
+whatever name you like.</p>
+<p><br></p>
+<center>
+<p><img src="images/replit15.png" /></p>
+<p><img src="images/replit14.png" /></p>
+</center>
+<p><br></p>
+<p>Once you have created your repl paste the below code into main.py
+(the code box).</p>
+<p><br></p>
+<pre class="python"><code># &#39;Start game&#39; function
+def start(): 
+  print(&quot;Welcome to my &#39;choose your own adventure game&#39;.&quot;)
+  print(&quot;To play the game you will be given prompts on the terminal.&quot;)
+  print(&quot;These prompts might ask you to enter text, or numbers to select certain actions..&quot;)
+  print(&quot;Now, let&#39;s begin...&quot;)
+
+  # Move onto &#39;choose name path&#39;
+  choose_name()
+
+
+# Begin &#39;choose name path&#39;
+def choose_name():
+  name = input(&quot;What is your name? &quot;)
+  print(&quot;Welcome &quot; + name + &quot;...&quot;)
+
+  # Move onto &#39;wake up&#39; path
+  wake_up()
+
+
+# Begin &#39;wake up&#39; path
+def wake_up():
+  print(&quot;\nYou wake up in a cave.&quot;)
+  print(&quot;It is dark and cold. \nYou don&#39;t know how you got there.&quot;)
+  print(&quot;\nThere are two exits.&quot;)
+  print(&quot;Down the LEFT exit you hear gentle voices. Down the RIGHT exit it is quiet.&quot;)
+  
+  answerSide = input(&quot;\nWhich way do you go? \n1. LEFT\n2. RIGHT\n&quot;)
+
+  # If &#39;1&#39; for left is selected go onto &#39;game win&#39; path
+  if answerSide == &quot;1&quot;: 
+    game_win()
+
+  # If &#39;2&#39; for right is selected go onto &#39;game lose&#39; path
+  elif answerSide == &quot;2&quot;:
+    game_lose()
+
+  # If the player tries to enter other text tell them it isn&#39;t valid and begin &#39;wake up&#39; path again
+  else:
+    print(&quot;Not a valid input. Try again and pick a number.&quot;)
+    wake_up()
+
+
+def game_win():
+  print(&quot;\nThe left path is empty. Strangely empty. But you reach an exit. Well done, you win!&quot;)
+
+
+def game_lose():
+  print(&quot;\nThe gentle voices belong to a terrible monster with too many mouths. It spots you and eats you. Oh no, you lose!&quot;)
+  
+
+# After all the functions for the different paths are defined, the game actually begins to run here
+# This runs the &#39;start game&#39; function 
+start()</code></pre>
+<center>
+<p><img src="images/replit16.png" /></p>
+</center>
+<p><br></p>
+<p>Now click ‘run’, what happens?</p>
+<p>…</p>
+<p>A very simple Choose Your Own Adventure game plays out on screen.
+Let’s break down this code so we can understand what is happening.</p>
+<p>It begins with us defining a <strong>function</strong>:</p>
+<pre class="python"><code>def start(): 
+  print(&quot;Welcome to my &#39;choose your own adventure game&#39;.&quot;)
+  print(&quot;To play the game you will be given prompts on the terminal.&quot;)
+  print(&quot;These prompts might ask you to enter text, or numbers to select certain actions..&quot;)
+  print(&quot;Now, let&#39;s begin...&quot;)
+
+  # Move onto &#39;choose name path&#39;
+  choose_name()</code></pre>
+<p><br></p>
+<p>A function is a block of code that only runs if it is
+<em>called</em>. We use the keyword <code>def</code> to declare a
+function, then follow it up with the function name, in this case
+‘start’. Inside the brackets we can add parameters that modify the
+function but we won’t go into this during this session. We end the line
+with a colon.</p>
+<p>After that we begin a block of indented code underneath. These are
+statements that the function should execute. In this case we print
+several lines of text introducing the game. Then we call a function
+named <code>choose_name</code>. You might notice that
+<code>choose_name</code> isn’t a function we’ve been introduced to yet.
+That is because we’re going to define that function ourselves.</p>
+<pre class="python"><code># Begin &#39;choose name path&#39;
+def choose_name():
+  name = input(&quot;What is your name? &quot;)
+  print(&quot;Welcome &quot; + name + &quot;...&quot;)
+
+  # Move onto &#39;wake up&#39; path
+  wake_up()</code></pre>
+<p><br></p>
+<p>Inside the function <code>choose_name</code> we use the function
+<code>input</code> that we outlined in <a href="activity1.html">Activity
+1</a>. This causes some text to pop up, prompting the user for their
+name. The user input is stored in the variable ‘name’.</p>
+<p>The next line prints “Welcome” combined with the text stored in
+‘name’, followed by some ellipses. After that it calls the function
+<code>wake_up</code>. By now you will have gathered that we are going to
+define <code>wake_up</code> ourselves.</p>
+<p><code>wake_up</code> is a little more complicated than our previous
+two functions in that it contains a <strong>control statement.</strong>
+It first prints the story text to set the scene for the player, then it
+asks them to make the choice ‘1. LEFT’ or ‘2. RIGHT’ using the
+<code>input</code> function. The output of this is stored in the
+variable ‘answerSide’. This is where our branches then come in.</p>
+<ul>
+<li><p>Our code first evaluates whether ‘answerSide’ equals “1”. If it
+does it passes the user onto the <code>game_win</code>
+function.</p></li>
+<li><p>If ‘answerside’ doesn’t equal “1” it then evaluates whether it
+equals “2” instead. If it does, then it passes the user onto the
+<code>game_lose</code> function.</p></li>
+<li><p>If ‘answerSide’ doesn’t equal either of these things then we
+print a warning to the user that they need to pick a number and it would
+begin running the function from the beginning.</p></li>
+</ul>
+<pre class="python"><code>
+# Begin &#39;wake up&#39; path
+def wake_up():
+  print(&quot;\nYou wake up in a cave.&quot;)
+  print(&quot;It is dark and cold. \nYou don&#39;t know how you got there.&quot;)
+  print(&quot;\nThere are two exits.&quot;)
+  print(&quot;Down the LEFT exit you hear gentle voices. Down the RIGHT exit it is quiet.&quot;)
+  
+  answerSide = input(&quot;\nWhich way do you go? \n1. LEFT\n2. RIGHT\n&quot;)
+
+  # If &#39;1&#39; for left is selected go onto &#39;game win&#39; path
+  if answerSide == &quot;1&quot;: 
+    game_win()
+
+  # If &#39;2&#39; for right is selected go onto &#39;game lose&#39; path
+  elif answerSide == &quot;2&quot;:
+    game_lose()
+
+  # If the player tries to enter other text tell them it isn&#39;t valid and begin &#39;wake up&#39; path again
+  else:
+    print(&quot;Not a valid input. Try again and pick a number.&quot;)
+    wake_up()
+</code></pre>
+<p><br></p>
+<p>Our final two functions are our <code>game_win</code> or
+<code>game_lose</code> functions. These just give an ending depending on
+which side was chosen.</p>
+<p><br></p>
+<p>To break it down, lines 1-49 are all just defining the functions that
+will be used to run the game. None of that code is intitially executed
+when the code is ran. You can think of this process as us writing
+invisible instructions before our script runs.</p>
+<p>When the code reaches line 54 we call the function
+<code>start</code>. This executes all the code inside the
+<code>start</code> function we defined earlier. Then, depending on the
+player input, the other functions will be executed.</p>
+<p>The way the functions link up represents the branching structure of a
+Choose Your Own Adventure Game.</p>
+<p><br></p>
+<center>
+<p><img src="images/cyoa2.png" /></p>
+</center>
+<p><br> <br></p>
+<div id="improve-it" class="section level2">
+<h2>Improve it!</h2>
+<p>One thing you may have noticed in some of the <code>print</code>
+statements is that they include <code>\n</code>. This means, move onto a
+new line. This is useful for spacing out the text, otherwise all of it
+might bunch together. This would look a bit ugly and be difficult to
+read. You can try to remove the <code>\n</code> parts and see what
+happens.</p>
+<p>Another thing we could do to improve our game is by introducing
+pauses between lines. You might have predicted that we are going to use
+the <code>sleep</code> function from the package ‘time’ to do this, like
+we did in <a href="activity2.html">Activity 2</a>.</p>
+<p><b>Challenge: introduce pauses between the lines of text in our game.
+Play around with timings to make them most effective.</b></p>
+<p>If you’re stuck/want an example, reveal the code in the box below.
+Remember we need to <code>import</code> the package ‘sleep’ first.</p>
+<pre class="python fold-hide"><code>import time
+
+def start(): 
+  print(&quot;Welcome to my &#39;choose your own adventure game&#39;.&quot;)
+  print(&quot;To play the game you will be given prompts on the terminal.&quot;)
+  print(&quot;These prompts might ask you to enter text, or numbers to select certain actions..&quot;)
+  print(&quot;Now, let&#39;s begin...&quot;)
+
+  # Move onto &#39;choose name path&#39;
+  choose_name()
+
+
+def choose_name():
+  name = input(&quot;What is your name? &quot;)
+  print(&quot;Welcome &quot; + name + &quot;...&quot;)
+
+  wake_up()
+
+def wake_up():
+  print(&quot;\nYou wake up in a cave.&quot;)
+  time.sleep(1)
+  print(&quot;It is dark and cold. \nYou don&#39;t know how you got there.&quot;)
+  time.sleep(1)
+  print(&quot;\nThere are two exits.&quot;)
+  time.sleep(1)
+  print(&quot;Down the LEFT exit you hear gentle voices. Down the RIGHT exit it is quiet.&quot;)
+  time.sleep(1)
+  answerSide = input(&quot;\nWhich way do you go? \n1. LEFT\n2. RIGHT\n&quot;)
+
+  if answerSide == &quot;1&quot;: 
+    game_win()
+
+  elif answerSide == &quot;2&quot;:
+    game_lose()
+
+  else:
+    print(&quot;Not a valid input. Try again and pick a number.&quot;)
+    wake_up()
+
+
+def game_win():
+  print(&quot;\nThe left path is empty.&quot;)
+  time.sleep(1)
+  print(&quot;Strangely empty.&quot;)
+  time.sleep(1)
+  print(&quot;But you reach an exit. Well done, you win!&quot;)
+
+
+def game_lose():
+  print(&quot;\nThe gentle voices belong to a terrible monster with too many mouths.&quot;)
+  time.sleep(1)
+  print(&quot;It spots you and eats you.&quot;)
+  time.sleep(1)
+  print(&quot; Oh no, you lose!&quot;)
+  
+
+start()</code></pre>
+<p>Finally, you might have noticed our game just ends when the play gets
+the ‘game win’ or ‘game lose’ text. Most games provide the players with
+an option to play again or quit. We are going to improve our game by
+adding the option to do so.</p>
+<p>We define an additional function called <code>play_again</code>.</p>
+<pre class="python"><code>def play_again():
+  print(&quot;&quot;)
+  restart = input(&quot;Do you want to play again? (y/n))&quot;)
+  if restart == &quot;yes&quot; or restart == &quot;y&quot;:
+    print(&quot;\n\n&quot;)
+    start()
+  elif restart == &quot;no&quot; or restart == &quot;n&quot;:
+    print(&quot;Okay, farewell!&quot;)
+    quit()</code></pre>
+<p><br></p>
+<p>This function asks the user if they want to play again using the
+<code>input</code> function and stores the answer in ‘restart’.</p>
+<ul>
+<li><p>If the answer was “yes” OR “y” several lines of empty space are
+printed before the <code>start</code> function is called and the game
+begins again.</p></li>
+<li><p>If the answer was “no” OR “n” a goodbye message is printed and
+the code quits out.</p></li>
+</ul>
+<p>(Note: in replit you will get a warning saying ‘repl process died
+unexpectedly:’, you can ignore this.)</p>
+<p><br></p>
+<p>To add the option to play again, we need to call our
+<code>play_again</code> function at the end of our <code>game_win</code>
+or <code>game_lose</code> functions. You can see the full code
+below:</p>
+<pre class="python fold-hide"><code>import time
+
+def start(): 
+  print(&quot;Welcome to my &#39;choose your own adventure game&#39;.&quot;)
+  print(&quot;To play the game you will be given prompts on the terminal.&quot;)
+  print(&quot;These prompts might ask you to enter text, or numbers to select certain actions..&quot;)
+  print(&quot;Now, let&#39;s begin...&quot;)
+
+  # Move onto &#39;choose name path&#39;
+  choose_name()
+
+
+def choose_name():
+  name = input(&quot;What is your name? &quot;)
+  print(&quot;Welcome &quot; + name + &quot;...&quot;)
+
+  wake_up()
+
+def wake_up():
+  print(&quot;\nYou wake up in a cave.&quot;)
+  time.sleep(1)
+  print(&quot;It is dark and cold. \nYou don&#39;t know how you got there.&quot;)
+  time.sleep(1)
+  print(&quot;\nThere are two exits.&quot;)
+  time.sleep(1)
+  print(&quot;Down the LEFT exit you hear gentle voices. Down the RIGHT exit it is quiet.&quot;)
+  time.sleep(1)
+  answerSide = input(&quot;\nWhich way do you go? \n1. LEFT\n2. RIGHT\n&quot;)
+
+  if answerSide == &quot;1&quot;: 
+    game_win()
+
+  elif answerSide == &quot;2&quot;:
+    game_lose()
+
+  else:
+    print(&quot;Not a valid input. Try again and pick a number.&quot;)
+    wake_up()
+
+
+def game_win():
+  print(&quot;\nThe left path is empty.&quot;)
+  time.sleep(1)
+  print(&quot;Strangely empty.&quot;)
+  time.sleep(1)
+  print(&quot;But you reach an exit. Well done, you win!&quot;)
+
+  play_again()
+
+
+def game_lose():
+  print(&quot;\nThe gentle voices belong to a terrible monster with too many mouths.&quot;)
+  time.sleep(1)
+  print(&quot;It spots you and eats you.&quot;)
+  time.sleep(1)
+  print(&quot; Oh no, you lose!&quot;)
+
+  play_again()
+  
+
+def play_again():
+  print(&quot;&quot;)
+  restart = input(&quot;Do you want to play again? (y/n))&quot;)
+  if restart == &quot;yes&quot; or restart == &quot;y&quot;:
+    print(&quot;\n\n&quot;)
+    start()
+  elif restart == &quot;no&quot; or restart == &quot;n&quot;:
+    print(&quot;Okay, farewell!&quot;)
+    quit()
+
+start()</code></pre>
+<p><br></p>
+<p>The final structure of our game ends up being:</p>
+<p><br></p>
+<center>
+<p><img src="images/cyoa3.png" /></p>
+</center>
+<p><br><br></p>
+</div>
+</div>
+<div id="create-your-own-game" class="section level1">
+<h1>Create your own game</h1>
+<p>Now, let’s try and create our own game. At first, begin with the
+template from our first game and try to create a game with only one
+choice that leads to a ‘win’ or ‘lose’ situation.</p>
+<p>After that, try to complicate your game by including multiple
+branches. Before trying to code this it would be good to draft out your
+branch structure so you can see how everything links together. We have
+provided pens and paper for you to create a draft for your game.</p>
+<p>Try to create a diagram like the one above. Give each of your
+branches a name as these could become the function names (remember: no
+spaces in function names, if you want to use a space separate it with an
+underscore!).</p>
+<p><br><br></p>
+</div>
+<div id="conclusions" class="section level1">
+<h1>Conclusions</h1>
+<p>In this activity we have created our own ‘choose your own adventure
+game’. We employed several difficult programming concepts including
+functions and control statements. You don’t need to understand exactly
+how all of this code worked, but hopefully you can use this skeleton to
+keep developing your story if you want to.</p>
+<p>We could make this game a lot more complicated by including items
+that could be encountered and change the outcome of certain branches,
+but this is beyond the scope of this session. There are many examples of
+Python ‘choose your own adventure’ games on the web that you could use
+for inspiration if you want to continue developing your own. <a
+href="https://replit.com/@worldsgreatestt/horror-game-in-python">Here</a>
+is an example of a creative horror game hosted on replit.</p>
+<p>If you create a game, please share your code/repl with me so I can
+try it! :) (I promise I won’t read spoilers.) Contact me at <a
+href="mailto:Emily.Johnson@liverpool.ac.uk"
+class="email">Emily.Johnson@liverpool.ac.uk</a> with the subject line
+‘Python Game’ if you want me to take a look.</p>
+<p><br><br></p>
+<p><img src="images/logo.png" style="float: right;"/></p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -13,6 +13,8 @@ navbar:
       href: activity2.html
     - text: Activity 3 - data analysis
       href: activity3.html
+    - text: Activity 4 - choose your own adventure game
+      href: activity4.html
   - text: Robot activities
     menu:
     - text: Hello LEGO!
