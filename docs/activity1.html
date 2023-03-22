@@ -556,7 +556,7 @@ Anything you like.</p>
 <h1>Interactive inputs</h1>
 <p>Normally, we don’t want our programs just to print out text. Some
 programs might expect user interaction. Next, we are going to write a
-program the prompts a user for an input, in this case your name. It
+program that prompts a user for an input, in this case your name. It
 stores the name in the variable ‘name’ and then prints the name out.</p>
 <pre class="python"><code># Use the &#39;input&#39; function to ask the user to provide an input and store it in variable &#39;name&#39;
 name = input(&quot;Enter name: &quot;)
@@ -567,7 +567,8 @@ print(&quot;Hello, your name is&quot;, name)</code></pre>
 <p>Let’s try and make this more complicated. We’ll write a program that
 imagines you’re having a conversation with a robot. It will first ask
 you for your name, then it will ask you to name it. The program will
-then print out your name and the name you gave it.</p>
+then print out your name and the name you gave it. Run the code below to
+try it.</p>
 <pre class="python"><code># Use the &#39;input&#39; function to ask the user to provide an input and store it in variable &#39;name&#39;
 name1 = input(&quot;What is your name? : &quot;)
 name2 = input(&quot;What is my name? : &quot;)
@@ -581,6 +582,52 @@ print(&quot;Hello, your name is &quot;, name1, &quot; and my name is &quot;, nam
 <p>Challenge: can you create a program that takes <b>three</b> inputs
 and then prints out a statement that includes all three inputs?</p>
 <p><br> <br></p>
+</div>
+<div id="repeating-code-and-running-code-out-of-order"
+class="section level1">
+<h1>Repeating code and running code out of order</h1>
+<p>Python will execute our program line by line, in order. We might have
+a piece of code we want to repeat over and over again. Or we might want
+to have all our code in one document and only run some of it, or run it
+in a different order. We can address all these scenarios using
+<code>functions</code>.</p>
+<p>A function is a block of code that only runs if it is called. We use
+the keyword def to declare a function, then follow it up with the
+function name. After that we begin a block of indented code underneath.
+These are lines of code that the function should then execute.</p>
+<p>Let’s create a simple function using our code above:</p>
+<pre class="python"><code>def robot_name():
+  # Use the &#39;input&#39; function to ask the user to provide an input and store it in variable &#39;name&#39;
+  name1 = input(&quot;What is your name? : &quot;)
+  name2 = input(&quot;What is my name? : &quot;)
+  
+  # Print the variable hello
+  print(&quot;Hello, your name is &quot;, name1, &quot; and my name is &quot;, name2)</code></pre>
+<p>What happens if you run this code?</p>
+<p><br></p>
+<p>… …</p>
+<p><br></p>
+<p>Nothing, yet! A function needs to be called to run.</p>
+<p>Now try and run the below code:</p>
+<pre class="python"><code>def robot_name():
+  # Use the &#39;input&#39; function to ask the user to provide an input and store it in variable &#39;name&#39;
+  name1 = input(&quot;What is your name? : &quot;)
+  name2 = input(&quot;What is my name? : &quot;)
+  
+  # Print the variable hello
+  print(&quot;Hello, your name is &quot;, name1, &quot; and my name is &quot;, name2)
+  
+  
+robot_name()
+robot_name()</code></pre>
+<p>It calls our function <i>twice</i> using <code>robot_name()</code>.
+This means the code inside the function is executed twice.</p>
+<p>Challenge (hard): try and create two custom functions. Give them
+their own names. Call the second function first, and the first function
+second.</p>
+<p>Can you see how this allows us to run code out of order? This will
+become very useful later when we try to make a ‘create your own
+adventure’ game. This works by linking different functions together!</p>
 </div>
 <div id="conclusions" class="section level1">
 <h1>Conclusions</h1>

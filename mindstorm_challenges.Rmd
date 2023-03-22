@@ -9,28 +9,29 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <br>
 
-We are now going to divide you into teams. Work as a team to complete the following challenges, don't worry if you don't manage them all. If you get stuck on one feel free to move onto another.
+We are now going to divide you into teams. Work as a team to try and write programs to complete the following tasks, don't worry if you don't manage them all. If you get stuck on one feel free to move onto another.
 
 You can code the program using the word blocks OR python - whichever your team would prefer!
 If you're using Python the [Motors and movement](mindstorm4.html) and [colours and control](mindstorm5.html) will contain code you might be able to adapt. 
 
-I'll award a prize to the team that writes the best program!
 
 <br><br>
 
 ## Move backwards
 
-Write a program that will cause your robot to move backwards when its 'eyes' (the distance sensor are covered). 
+Write a program that will cause your robot to move backwards when its 'eyes' (the distance sensor) are covered. 
 
 <br>
 
 ## React to lines and obstacles 
 
-Write a program that will have your robot react as it crosses different coloured lines. I've placed down red and black masking tape. Have each of these trigger something different, for example: a face on the light up matrix. (See python \> hub \> light matrix \> `hub.show_image()` if you're using Python). 
+Write a program that will have your robot react as it crosses different coloured lines. I've placed down red and black masking tape. Have each of these trigger something different, for example: a face on the light up matrix. 
+
+(See python \> hub \> light matrix \> `hub.show_image()` if you're using Python). 
 
 <br>
 
-## Create a robot than can escape a box of red or black tape
+## Create a robot than can escape a box of red tape
 
 I've created a box of red tape on the floor with a gap in, try and create a program that will allow the robot to navigate it's way out, starting from a random position inside the box. 
 

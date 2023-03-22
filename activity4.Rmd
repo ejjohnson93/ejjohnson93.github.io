@@ -53,7 +53,7 @@ In this activity we are going to create our own Choose Your Own Adventure game c
 
 Our previous activities have introduced us to the `print` function and the `sleep` function. We are going to make use of both of these here. In addition to this, **we are going to create our own functions**. This might sound quite daunting but we will break the process down into steps.
 
-[Activity 3](activity3.html) makes use of Jupyter notebooks. This activity makes use of replit once again. Let's begin by creating a new repl, we might call it 'CBF game', but you can use whatever name you like.
+Let's begin by creating a new repl, we might call it 'CBF game', but you can use whatever name you like.
 
 <br>
 
