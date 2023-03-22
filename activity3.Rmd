@@ -1,5 +1,5 @@
 ---
-title: "Activity 3 - Python plotting"
+title: "Extra activities - Python plotting"
 output: html_document
 ---
 
@@ -453,9 +453,7 @@ plt.show()
 
 <br><br>
 
-# Supplementary activities
-
-## Map creation
+# Making maps
 
 Line charts aren't the only type of data python can plot. We can also create visualisations of maps with the help of another package called 'folium'. An example visualisation is below:
 

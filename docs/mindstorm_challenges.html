@@ -344,10 +344,19 @@ div.tocify {
       <a href="activity2.html">Activity 2 - python poem</a>
     </li>
     <li>
-      <a href="activity3.html">Activity 3 - data analysis</a>
+      <a href="activity4.html">Activity 3 - choose your own adventure game</a>
     </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Extra activities
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="activity4.html">Activity 4 - choose your own adventure game</a>
+      <a href="activity3.html">Data analysis</a>
     </li>
   </ul>
 </li>
@@ -396,8 +405,23 @@ div.tocify {
     </li>
   </ul>
 </li>
-<li>
-  <a href="about.html">About us</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    More
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="about.html">About Us</a>
+    </li>
+    <li>
+      <a href="feedback.html">Leave us feedback</a>
+    </li>
+    <li>
+      <a href="resources.html">Additional resources</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -447,41 +471,34 @@ div.tocify {
 <p>We are now going to divide you into teams. Work as a team to complete
 the following challenges, don’t worry if you don’t manage them all. If
 you get stuck on one feel free to move onto another.</p>
-<p>I’d suggest first constructing the program using the word blocks,
-then converting it into python afterwards. <a
+<p>You can code the program using the word blocks OR python - whichever
+your team would prefer! If you’re using Python the <a
 href="mindstorm4.html">Motors and movement</a> and <a
-href="mindstorm5.html">colours and control</a> will likely contain
-examples of the code you need.</p>
+href="mindstorm5.html">colours and control</a> will contain code you
+might be able to adapt.</p>
+<p>I’ll award a prize to the team that writes the best program!</p>
 <p><br><br></p>
-<div id="stop-on-the-line" class="section level2">
-<h2>Stop on the line</h2>
-<p>Write a program that will start your robot moving, then stop if it
-passes over a red line.</p>
-<p>There are multiple ways to code this:</p>
-<ul>
-<li><p>The distance sensor has the
-<code>distance_sensor.wait_for_distance_closer_than()</code> function,
-the color sensor has an equivalent
-<code>color_sensor.wait_until_color()</code> function.</p></li>
-<li><p>You could also use a while loop with control statements.</p></li>
-</ul>
+<div id="move-backwards" class="section level2">
+<h2>Move backwards</h2>
+<p>Write a program that will cause your robot to move backwards when its
+‘eyes’ (the distance sensor are covered).</p>
 <p><br></p>
 </div>
 <div id="react-to-lines-and-obstacles" class="section level2">
 <h2>React to lines and obstacles</h2>
 <p>Write a program that will have your robot react as it crosses
-different coloured lines. I’ve placed down red, blue and black masking
-tape. Have each of these trigger something different, for example: a
-face on the light up matrix. (See python &gt; hub &gt; light matrix &gt;
-<code>hub.show_image()</code> ). Finally, have it stop if it approaches
-an obstacle.</p>
+different coloured lines. I’ve placed down red and black masking tape.
+Have each of these trigger something different, for example: a face on
+the light up matrix. (See python &gt; hub &gt; light matrix &gt;
+<code>hub.show_image()</code> if you’re using Python).</p>
 <p><br></p>
 </div>
-<div id="escape-a-maze" class="section level2">
-<h2>Escape a maze</h2>
-<p>I’ve created a simple maze using masking tape. Can you write a
-program that uses motor commands to help the robot escape? If the robot
-crosses the lines it fails!</p>
+<div id="create-a-robot-than-can-escape-a-box-of-red-or-black-tape"
+class="section level2">
+<h2>Create a robot than can escape a box of red or black tape</h2>
+<p>I’ve created a box of red tape on the floor with a gap in, try and
+create a program that will allow the robot to navigate it’s way out,
+starting from a random position inside the box.</p>
 <p><br></p>
 </div>
 <div id="create-your-own-program" class="section level2">

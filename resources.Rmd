@@ -1,0 +1,27 @@
+---
+title: "Additional resources"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Under construction
+
+Sorry these resources are still under construction - check back later!
+
+<br><br>
+
+
+## Learn programming at home
+
+<br><br>
+
+
+## People to follow
+
+
+<br><br>
+
+<img src="./images/logo.png" style="float: right;"/>

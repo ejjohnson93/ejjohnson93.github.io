@@ -1,0 +1,21 @@
+---
+title: "Feedback"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Please leave us feedback at the following link: 
+
+https://forms.gle/Nj8dKopVLcToBpMw9
+
+Your feedback is extremely important to us and helps us make these activties better for future cohorts. :) 
+
+<br><br>
+
+
+
+<img src="./images/logo.png" style="float: right;"/>

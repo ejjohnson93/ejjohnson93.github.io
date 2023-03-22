@@ -1,5 +1,5 @@
 ---
-title: "Activity 4 - Choose your own adventure (BETA)"
+title: "Activity 3 - Choose your own adventure"
 output: html_document
 ---
 

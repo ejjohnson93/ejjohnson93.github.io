@@ -11,10 +11,12 @@ navbar:
       href: activity1.html
     - text: Activity 2 - python poem
       href: activity2.html
-    - text: Activity 3 - data analysis
-      href: activity3.html
-    - text: Activity 4 - choose your own adventure game
+    - text: Activity 3 - choose your own adventure game
       href: activity4.html
+  - text: Extra activities
+    menu:
+    - text: Data analysis
+      href: activity3.html
   - text: Robot activities
     menu:
     - text: Hello LEGO!
@@ -37,8 +39,14 @@ navbar:
       href: microbit4.html
     - text: Extra challenges
       href: microbit_extrachallenges.html
-  - text: About us
-    href: about.html
+  - text: More
+    menu:
+    - text: About Us
+      href: about.html
+    - text: Leave us feedback
+      href: feedback.html
+    - text: Additional resources
+      href: resources.html
   right:
   - icon: fab fa-twitter
     href: https://twitter.com/LivUniCBF

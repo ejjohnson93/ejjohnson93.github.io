@@ -11,31 +11,28 @@ knitr::opts_chunk$set(echo = TRUE)
 
 We are now going to divide you into teams. Work as a team to complete the following challenges, don't worry if you don't manage them all. If you get stuck on one feel free to move onto another.
 
-I'd suggest first constructing the program using the word blocks, then converting it into python afterwards. [Motors and movement](mindstorm4.html) and [colours and control](mindstorm5.html) will likely contain examples of the code you need.
+You can code the program using the word blocks OR python - whichever your team would prefer!
+If you're using Python the [Motors and movement](mindstorm4.html) and [colours and control](mindstorm5.html) will contain code you might be able to adapt. 
+
+I'll award a prize to the team that writes the best program!
 
 <br><br>
 
-## Stop on the line
+## Move backwards
 
-Write a program that will start your robot moving, then stop if it passes over a red line.
-
-There are multiple ways to code this:
-
--   The distance sensor has the `distance_sensor.wait_for_distance_closer_than()` function, the color sensor has an equivalent `color_sensor.wait_until_color()` function.
-
--   You could also use a while loop with control statements.
+Write a program that will cause your robot to move backwards when its 'eyes' (the distance sensor are covered). 
 
 <br>
 
 ## React to lines and obstacles 
 
-Write a program that will have your robot react as it crosses different coloured lines. I've placed down red, blue and black masking tape. Have each of these trigger something different, for example: a face on the light up matrix. (See python \> hub \> light matrix \> `hub.show_image()` ). Finally, have it stop if it approaches an obstacle.
+Write a program that will have your robot react as it crosses different coloured lines. I've placed down red and black masking tape. Have each of these trigger something different, for example: a face on the light up matrix. (See python \> hub \> light matrix \> `hub.show_image()` if you're using Python). 
 
 <br>
 
-## Escape a maze
+## Create a robot than can escape a box of red or black tape
 
-I've created a simple maze using masking tape. Can you write a program that uses motor commands to help the robot escape? If the robot crosses the lines it fails!
+I've created a box of red tape on the floor with a gap in, try and create a program that will allow the robot to navigate it's way out, starting from a random position inside the box. 
 
 <br>
 
